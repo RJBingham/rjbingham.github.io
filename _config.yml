@@ -1,3 +1,13 @@
 theme: jekyll-theme-minimal
 title: RJ Bingham
 description: Protein biochemist / Educator
+
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about/"
+  - title: "Research"
+    url: "/research/"
+  - title: "Teaching"
+    url: "/teaching/"
