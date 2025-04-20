@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "RJ Bingham"
+title: "Home"
 ---
 
 # Welcome to My Website
