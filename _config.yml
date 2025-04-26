@@ -1,13 +1,21 @@
-theme: jekyll-theme-minimal
-title: RJ Bingham
-description: Protein biochemist / Educator
+project:
+  type: website
 
-nav:
-  - title: "Home"
-    url: "/"
-  - title: "About"
-    url: "/about/"
-  - title: "Research"
-    url: "/research/"
-  - title: "Teaching"
-    url: "/teaching/"
+website:
+  title: "RJ Bingham"
+  description: "Protein biochemist / Educator"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Teaching"
+        href: teaching.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
