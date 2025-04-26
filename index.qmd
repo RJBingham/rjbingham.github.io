@@ -1,0 +1,15 @@
+---
+title: "Welcome"
+format:
+  html:
+    page-layout: full
+---
+
+# RJ Bingham
+
+Here, you can learn more about my:
+
+-   🔬 [Research](research.qmd) in protein structure and function
+-   🎓 [Teaching](teaching.qmd) philosophy and methods
+-   📚 [Background](about.qmd) and academic journey
+- [Favourite Recipes](recipes.qmd)

@@ -1,0 +1,8 @@
+---
+title: "recipes"
+format: html
+editor: visual
+---
+
+## Recipes
+- [Pilau Rice](pilau_rice.qmd)
