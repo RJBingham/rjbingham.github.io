@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Soft Pilau Rice – RJBingham</title>
+<title>Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin – RJBingham</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,15 +112,30 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-coordinate-files" id="toc-introduction-to-coordinate-files" class="nav-link active" data-scroll-target="#introduction-to-coordinate-files">Introduction to coordinate files</a></li>
+  <li><a href="#finding-the-right-amino-acid-sequence" id="toc-finding-the-right-amino-acid-sequence" class="nav-link" data-scroll-target="#finding-the-right-amino-acid-sequence">Finding the right amino acid sequence</a>
+  <ul class="collapse">
+  <li><a href="#fibronectin-domains" id="toc-fibronectin-domains" class="nav-link" data-scroll-target="#fibronectin-domains">Fibronectin domains</a></li>
+  <li><a href="#fibronectin-binding-protein-a-fnbpa" id="toc-fibronectin-binding-protein-a-fnbpa" class="nav-link" data-scroll-target="#fibronectin-binding-protein-a-fnbpa">Fibronectin-binding protein A (FnBPA)</a></li>
+  <li><a href="#streptococcal-fibronectin-binding-protein-i-sfbi" id="toc-streptococcal-fibronectin-binding-protein-i-sfbi" class="nav-link" data-scroll-target="#streptococcal-fibronectin-binding-protein-i-sfbi">Streptococcal fibronectin binding protein I (SfbI)</a></li>
+  </ul></li>
+  <li><a href="#generating-models-using-the-alphafold-server" id="toc-generating-models-using-the-alphafold-server" class="nav-link" data-scroll-target="#generating-models-using-the-alphafold-server">Generating models using the AlphaFold Server</a></li>
+  <li><a href="#calculating-binding-affinity-using-prodigy" id="toc-calculating-binding-affinity-using-prodigy" class="nav-link" data-scroll-target="#calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Soft Pilau Rice</h1>
+<h1 class="title">Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin</h1>
 </div>
 
 
@@ -137,45 +152,56 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This recipe is adapted to make slightly softer rice.</p>
-<ul>
-<li>soak 300g (or 400ml) basmati rice in water for at least 30 minutes</li>
-<li>Fry one finely chopped onion (10 minutes)</li>
-<li>Add the following and heat for 1 minute:
-<ul>
-<li>1tsp ground cumin</li>
-<li>6 cardamom pods</li>
-<li>4 cloves</li>
-<li>1/2 tsp ground coriander</li>
-<li>1/2 tsp ground turmeric</li>
-</ul></li>
-<li>Add the rice and mix</li>
-<li>Add 550ml vegetable stock</li>
-<li>Bring to the boil and stir</li>
-<li>Cover and simmer for 3 minutes.</li>
-<li>Do not remove the lid, just turn the heat off and leave it for 10 minutes (optionally, put it in the oven at 80 degrees) -Mix and leave for another 5-10 minutes, longer is ok.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Quick Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>At the start, measure the 400ml rice out in a pyrex jug, tip it into a seive to rinse it, then use the same pyrex jug to make the 550ml of stock.</p>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<p>This guide is written for project students at undergraduate or MSc level. The page is under construction</p>
+<section id="introduction-to-coordinate-files" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-coordinate-files">Introduction to coordinate files</h2>
+<p>Several experimental structures (from NMR and X-ray crystallography) are available of bacterial peptides in complex with fibronectin. The structure files can be downloaded from the Protein Data Bank (PDB). For example, see the “Crystal structure of the second and third fibronectin F1 modules in complex with a fragment of Streptococcus pyogenes SfbI-5”, PDB accession code <a href="https://www.rcsb.org/structure/3ZRZ">3ZRZ</a>. Click on Download Files, then choose either the PDBx/mmCIF Format, or the Legacy PDB Format.</p>
+<div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="images/rice.png" class="img-fluid figure-img"></p>
-<figcaption>rice</figcaption>
+<p><img src="images/PDB_screenshot.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>screenshot of the PDB)</figcaption>
 </figure>
 </div>
+<p>This is a simple text file. Open it in a text editor (e.g.&nbsp;Wordpad) and scroll down to see the 3D coordinates of each atom. There are several programs available to visualise coordinate files in this format (PyMOL, VMD, RASMOL), but these will not be covered here.</p>
+<p>There are advantages and disadvantages of using coordinates from experimental structures such as these. The primary advantage is the accuracy of the structure - we can have high confidence in the precise spatial arrangement of all atoms in the coordinate file. There are some things we need to aware of:</p>
+<ul>
+<li>loop regions may be disordered. The amino acids in these flexible regions are often missing in the coordinate files, therefore there is a break, or gap in the polypeptide.</li>
+<li>Some amino acids may have been modelled in two or more conformations (alternative conformations). Or, part of the side-chain might be missing.</li>
+<li>The coordinate file (the asymmetric unit) may have more than one copy of the molecule.<br>
+</li>
+<li>The coordinate files will often contain other non-protein components. If you look at 3ZRZ above, you will see a glycerol molecule, a sulphate ion and many water molecules. In addition, the bacterial peptide is acetylated at the N-terminus (ACE residue)</li>
+</ul>
+<p>To calculate an accurate binding affinity between two molecules, we need accurate coordinate files that include all the amino acids. These missing (or extra) parts will need to be corrected.</p>
+<p>One option would be to edit the text file to remove these non-protein atoms, then rebuild and model the missing loops and side-chains. However, in 2021, Alphafold2 was released, which, for the first time made it possible to accurately predict the 3D-structure of a protein based only on the amino acid sequence (Jumper et al., 2021). The accuracy of these protein models has been shown to be excellent, especially where there is a prior structure in the PDB with high sequence identity to the target. Then, in 2024 Alphafold3 was released (Abramson et al., 2024) allowing the accurate prediction of complexes, for example the interaction between two distinct proteins. The Alphafold server is available <a href="https://alphafoldserver.com/welcome">here</a>. You will need a google account to use it. You will notice from this server that the input is simplly an amino acid sequence in one-letter code.</p>
+</section>
+<section id="finding-the-right-amino-acid-sequence" class="level2">
+<h2 class="anchored" data-anchor-id="finding-the-right-amino-acid-sequence">Finding the right amino acid sequence</h2>
+<section id="fibronectin-domains" class="level3">
+<h3 class="anchored" data-anchor-id="fibronectin-domains">Fibronectin domains</h3>
+<p>The Uniprot entry for human fibronectin is…</p>
+</section>
+<section id="fibronectin-binding-protein-a-fnbpa" class="level3">
+<h3 class="anchored" data-anchor-id="fibronectin-binding-protein-a-fnbpa">Fibronectin-binding protein A (FnBPA)</h3>
+</section>
+<section id="streptococcal-fibronectin-binding-protein-i-sfbi" class="level3">
+<h3 class="anchored" data-anchor-id="streptococcal-fibronectin-binding-protein-i-sfbi">Streptococcal fibronectin binding protein I (SfbI)</h3>
+</section>
+</section>
+<section id="generating-models-using-the-alphafold-server" class="level2">
+<h2 class="anchored" data-anchor-id="generating-models-using-the-alphafold-server">Generating models using the AlphaFold Server</h2>
+</section>
+<section id="calculating-binding-affinity-using-prodigy" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</h2>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Abramson, J., Adler, J., Dunger, J. et al.&nbsp;Accurate structure prediction of biomolecular interactions with AlphaFold 3. Nature 630, 493–500 (2024).</li>
+<li>Jumper, J., Evans, R., Pritzel, A. et al.&nbsp;Highly accurate protein structure prediction with AlphaFold. Nature 596, 583–589 (2021). https://doi.org/10.1038/s41586-021-03819-2</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

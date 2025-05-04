@@ -4,7 +4,49 @@
     "href": "index.html",
     "title": "RJBingham",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This is a Quarto website. This site is under construction."
+  },
+  {
+    "objectID": "tandem_beta_prodigy.html",
+    "href": "tandem_beta_prodigy.html",
+    "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
+    "section": "",
+    "text": "This guide is written for project students at undergraduate or MSc level. The page is under construction"
+  },
+  {
+    "objectID": "tandem_beta_prodigy.html#introduction-to-coordinate-files",
+    "href": "tandem_beta_prodigy.html#introduction-to-coordinate-files",
+    "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
+    "section": "Introduction to coordinate files",
+    "text": "Introduction to coordinate files\nSeveral experimental structures (from NMR and X-ray crystallography) are available of bacterial peptides in complex with fibronectin. The structure files can be downloaded from the Protein Data Bank (PDB). For example, see the “Crystal structure of the second and third fibronectin F1 modules in complex with a fragment of Streptococcus pyogenes SfbI-5”, PDB accession code 3ZRZ. Click on Download Files, then choose either the PDBx/mmCIF Format, or the Legacy PDB Format.\n\n\n\nscreenshot of the PDB)\n\n\nThis is a simple text file. Open it in a text editor (e.g. Wordpad) and scroll down to see the 3D coordinates of each atom. There are several programs available to visualise coordinate files in this format (PyMOL, VMD, RASMOL), but these will not be covered here.\nThere are advantages and disadvantages of using coordinates from experimental structures such as these. The primary advantage is the accuracy of the structure - we can have high confidence in the precise spatial arrangement of all atoms in the coordinate file. There are some things we need to aware of:\n\nloop regions may be disordered. The amino acids in these flexible regions are often missing in the coordinate files, therefore there is a break, or gap in the polypeptide.\nSome amino acids may have been modelled in two or more conformations (alternative conformations). Or, part of the side-chain might be missing.\nThe coordinate file (the asymmetric unit) may have more than one copy of the molecule.\n\nThe coordinate files will often contain other non-protein components. If you look at 3ZRZ above, you will see a glycerol molecule, a sulphate ion and many water molecules. In addition, the bacterial peptide is acetylated at the N-terminus (ACE residue)\n\nTo calculate an accurate binding affinity between two molecules, we need accurate coordinate files that include all the amino acids. These missing (or extra) parts will need to be corrected.\nOne option would be to edit the text file to remove these non-protein atoms, then rebuild and model the missing loops and side-chains. However, in 2021, Alphafold2 was released, which, for the first time made it possible to accurately predict the 3D-structure of a protein based only on the amino acid sequence (Jumper et al., 2021). The accuracy of these protein models has been shown to be excellent, especially where there is a prior structure in the PDB with high sequence identity to the target. Then, in 2024 Alphafold3 was released (Abramson et al., 2024) allowing the accurate prediction of complexes, for example the interaction between two distinct proteins. The Alphafold server is available here. You will need a google account to use it. You will notice from this server that the input is simplly an amino acid sequence in one-letter code."
+  },
+  {
+    "objectID": "tandem_beta_prodigy.html#finding-the-right-amino-acid-sequence",
+    "href": "tandem_beta_prodigy.html#finding-the-right-amino-acid-sequence",
+    "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
+    "section": "Finding the right amino acid sequence",
+    "text": "Finding the right amino acid sequence\n\nFibronectin domains\nThe Uniprot entry for human fibronectin is…\n\n\nFibronectin-binding protein A (FnBPA)\n\n\nStreptococcal fibronectin binding protein I (SfbI)"
+  },
+  {
+    "objectID": "tandem_beta_prodigy.html#generating-models-using-the-alphafold-server",
+    "href": "tandem_beta_prodigy.html#generating-models-using-the-alphafold-server",
+    "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
+    "section": "Generating models using the AlphaFold Server",
+    "text": "Generating models using the AlphaFold Server"
+  },
+  {
+    "objectID": "tandem_beta_prodigy.html#calculating-binding-affinity-using-prodigy",
+    "href": "tandem_beta_prodigy.html#calculating-binding-affinity-using-prodigy",
+    "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
+    "section": "Calculating binding affinity using PRODIGY",
+    "text": "Calculating binding affinity using PRODIGY"
+  },
+  {
+    "objectID": "tandem_beta_prodigy.html#references",
+    "href": "tandem_beta_prodigy.html#references",
+    "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
+    "section": "References",
+    "text": "References\n\nAbramson, J., Adler, J., Dunger, J. et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. Nature 630, 493–500 (2024).\nJumper, J., Evans, R., Pritzel, A. et al. Highly accurate protein structure prediction with AlphaFold. Nature 596, 583–589 (2021). https://doi.org/10.1038/s41586-021-03819-2"
   },
   {
     "objectID": "recipes.html",
@@ -23,22 +65,64 @@
   {
     "objectID": "pilau_rice.html",
     "href": "pilau_rice.html",
-    "title": "Pilau Rice",
+    "title": "Soft Pilau Rice",
     "section": "",
     "text": "This recipe is adapted to make slightly softer rice.\n\nsoak 300g (or 400ml) basmati rice in water for at least 30 minutes\nFry one finely chopped onion (10 minutes)\nAdd the following and heat for 1 minute:\n\n1tsp ground cumin\n6 cardamom pods\n4 cloves\n1/2 tsp ground coriander\n1/2 tsp ground turmeric\n\nAdd the rice and mix\nAdd 550ml vegetable stock\nBring to the boil and stir\nCover and simmer for 3 minutes.\nDo not remove the lid, just turn the heat off and leave it for 10 minutes (optionally, put it in the oven at 80 degrees) -Mix and leave for another 5-10 minutes, longer is ok.\n\n\n\n\n\n\n\nQuick Tip\n\n\n\nAt the start, measure the 400ml rice out in a pyrex jug, tip it into a seive to rinse it, then use the same pyrex jug to make the 550ml of stock.\n\n\n\n\n\nrice"
   },
   {
-    "objectID": "pilau_rice.html#soft-pilau-rice",
-    "href": "pilau_rice.html#soft-pilau-rice",
-    "title": "Pilau Rice",
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
     "section": "",
-    "text": "This recipe is adapted to make slightly softer rice.\n\nsoak 300g (or 400ml) basmati rice in water for at least 30 minutes\nFry one finely chopped onion (10 minutes)\nAdd the following and heat for 1 minute:\n\n1tsp ground cumin\n6 cardamom pods\n4 cloves\n1/2 tsp ground coriander\n1/2 tsp ground turmeric\n\nAdd the rice and mix\nAdd 550ml vegetable stock\nBring to the boil and stir\nCover and simmer for 3 minutes.\nDo not remove the lid, just turn the heat off and leave it for 10 minutes (optionally, put it in the oven at 80 degrees) -Mix and leave for another 5-10 minutes, longer is ok.\n\n\n\n\n\n\n\nQuick Tip\n\n\n\nAt the start, measure the 400ml rice out in a pyrex jug, tip it into a seive to rinse it, then use the same pyrex jug to make the 550ml of stock.\n\n\n\n\n\nrice"
+    "text": "Tutorial to estimate the binding affinity of a tandem beta-zipper"
+  },
+  {
+    "objectID": "research.html#protein-science",
+    "href": "research.html#protein-science",
+    "title": "Research",
+    "section": "",
+    "text": "Tutorial to estimate the binding affinity of a tandem beta-zipper"
+  },
+  {
+    "objectID": "research.html#borrelia-and-lyme-disease",
+    "href": "research.html#borrelia-and-lyme-disease",
+    "title": "Research",
+    "section": "Borrelia and Lyme Disease",
+    "text": "Borrelia and Lyme Disease"
+  },
+  {
+    "objectID": "research.html#molecular-dynamics",
+    "href": "research.html#molecular-dynamics",
+    "title": "Research",
+    "section": "Molecular Dynamics",
+    "text": "Molecular Dynamics"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Personal Interests",
     "section": "",
-    "text": "About this site"
+    "text": "When I am not working, I can often be found either running or mountain biking on the local trails. When I was younger, I did a lot of rock climbing. More recently, I have completed a number of ultramarathons (very slowly)."
+  },
+  {
+    "objectID": "about.html#running-and-cycling",
+    "href": "about.html#running-and-cycling",
+    "title": "Personal Interests",
+    "section": "",
+    "text": "When I am not working, I can often be found either running or mountain biking on the local trails. When I was younger, I did a lot of rock climbing. More recently, I have completed a number of ultramarathons (very slowly)."
+  },
+  {
+    "objectID": "about.html#astrobiology",
+    "href": "about.html#astrobiology",
+    "title": "Personal Interests",
+    "section": "Astrobiology",
+    "text": "Astrobiology\nAlthough it is not yet part of my research, I have a keen amateur interest in Astrobiology. Each year, I incorporate a thought experiment into the first-year induction programme where students design an experiment to detect life in water from Europa.\n\n\n\nMe giving a lecture on astrobiology (photo by Yun Wah Lam)"
+  },
+  {
+    "objectID": "about.html#cooking",
+    "href": "about.html#cooking",
+    "title": "Personal Interests",
+    "section": "Cooking",
+    "text": "Cooking\nHere are some of my favourite basic recipes.\n\nPilau Rice"
   }
 ]
