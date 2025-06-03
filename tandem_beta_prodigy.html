@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6275b981afd3d608cc78d353756cd5bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2c5246ca03a33f580d63dc95b88580e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,14 +118,16 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction-to-coordinate-files" id="toc-introduction-to-coordinate-files" class="nav-link active" data-scroll-target="#introduction-to-coordinate-files">Introduction to coordinate files</a></li>
-  <li><a href="#finding-the-right-amino-acid-sequence" id="toc-finding-the-right-amino-acid-sequence" class="nav-link" data-scroll-target="#finding-the-right-amino-acid-sequence">Finding the right amino acid sequence</a>
+  <li><a href="#finding-the-correct-amino-acid-sequences" id="toc-finding-the-correct-amino-acid-sequences" class="nav-link" data-scroll-target="#finding-the-correct-amino-acid-sequences">Finding the correct amino acid sequences</a>
   <ul class="collapse">
-  <li><a href="#fibronectin-domains" id="toc-fibronectin-domains" class="nav-link" data-scroll-target="#fibronectin-domains">Fibronectin domains</a></li>
+  <li><a href="#fibronectin-domains-2f1-to-5f1" id="toc-fibronectin-domains-2f1-to-5f1" class="nav-link" data-scroll-target="#fibronectin-domains-2f1-to-5f1">Fibronectin domains 2F1 to 5F1</a></li>
   <li><a href="#fibronectin-binding-protein-a-fnbpa" id="toc-fibronectin-binding-protein-a-fnbpa" class="nav-link" data-scroll-target="#fibronectin-binding-protein-a-fnbpa">Fibronectin-binding protein A (FnBPA)</a></li>
-  <li><a href="#streptococcal-fibronectin-binding-protein-i-sfbi" id="toc-streptococcal-fibronectin-binding-protein-i-sfbi" class="nav-link" data-scroll-target="#streptococcal-fibronectin-binding-protein-i-sfbi">Streptococcal fibronectin binding protein I (SfbI)</a></li>
   </ul></li>
   <li><a href="#generating-models-using-the-alphafold-server" id="toc-generating-models-using-the-alphafold-server" class="nav-link" data-scroll-target="#generating-models-using-the-alphafold-server">Generating models using the AlphaFold Server</a></li>
-  <li><a href="#calculating-binding-affinity-using-prodigy" id="toc-calculating-binding-affinity-using-prodigy" class="nav-link" data-scroll-target="#calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</a></li>
+  <li><a href="#calculating-binding-affinity-using-prodigy" id="toc-calculating-binding-affinity-using-prodigy" class="nav-link" data-scroll-target="#calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</a>
+  <ul class="collapse">
+  <li><a href="#streptococcal-fibronectin-binding-protein-i-sfbi" id="toc-streptococcal-fibronectin-binding-protein-i-sfbi" class="nav-link" data-scroll-target="#streptococcal-fibronectin-binding-protein-i-sfbi">Streptococcal fibronectin binding protein I (SfbI)</a></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -172,26 +174,35 @@ ul.task-list li input[type="checkbox"] {
 <li>The coordinate files will often contain other non-protein components. If you look at 3ZRZ above, you will see a glycerol molecule, a sulphate ion and many water molecules. In addition, the bacterial peptide is acetylated at the N-terminus (ACE residue)</li>
 </ul>
 <p>To calculate an accurate binding affinity between two molecules, we need accurate coordinate files that include all the amino acids. These missing (or extra) parts will need to be corrected.</p>
-<p>One option would be to edit the text file to remove these non-protein atoms, then rebuild and model the missing loops and side-chains. However, in 2021, Alphafold2 was released, which, for the first time made it possible to accurately predict the 3D-structure of a protein based only on the amino acid sequence (Jumper et al., 2021). The accuracy of these protein models has been shown to be excellent, especially where there is a prior structure in the PDB with high sequence identity to the target. Then, in 2024 Alphafold3 was released (Abramson et al., 2024) allowing the accurate prediction of complexes, for example the interaction between two distinct proteins. The Alphafold server is available <a href="https://alphafoldserver.com/welcome">here</a>. You will need a google account to use it. You will notice from this server that the input is simplly an amino acid sequence in one-letter code.</p>
+<p>One option would be to edit the text file to remove these non-protein atoms, then rebuild and model the missing loops and side-chains. However, in 2021, Alphafold2 was released, which, for the first time made it possible to accurately predict the 3D-structure of a protein based only on the amino acid sequence (Jumper et al., 2021). The accuracy of these protein models has been shown to be excellent, especially where there is a prior structure in the PDB with high sequence identity to the target. Then, in 2024 Alphafold3 was released (Abramson et al., 2024) allowing the accurate prediction of complexes, for example the interaction between two distinct proteins. The Alphafold server is available <a href="https://alphafoldserver.com/welcome">here</a>. You will need a google account to use it. You will notice from this server that the input is simply an amino acid sequence in one-letter code.</p>
 </section>
-<section id="finding-the-right-amino-acid-sequence" class="level2">
-<h2 class="anchored" data-anchor-id="finding-the-right-amino-acid-sequence">Finding the right amino acid sequence</h2>
-<section id="fibronectin-domains" class="level3">
-<h3 class="anchored" data-anchor-id="fibronectin-domains">Fibronectin domains</h3>
-<p>The Uniprot entry for human fibronectin is…</p>
+<section id="finding-the-correct-amino-acid-sequences" class="level2">
+<h2 class="anchored" data-anchor-id="finding-the-correct-amino-acid-sequences">Finding the correct amino acid sequences</h2>
+<p>In the example, we will find the amino acid sequences that correspond to the interaction between 2F1-5F1 and FnBPA1. This is the interaction described on row 1 of Table 1 in <a href="https://doi.org/10.1074/jbc.M703063200">Meenan et al, 2007</a>.</p>
+<section id="fibronectin-domains-2f1-to-5f1" class="level3">
+<h3 class="anchored" data-anchor-id="fibronectin-domains-2f1-to-5f1">Fibronectin domains 2F1 to 5F1</h3>
+<p>The Uniprot entry for human fibronectin is <a href="https://www.uniprot.org/uniprotkb/P02751/entry">P02751</a>. Click on Family and Domains, then scroll down to find the 2nd type-I domain (2F1), this is called “Fibronectin type-I 2” and it is residues 95-138. Scroll down further to the 5th type-I domain (5F1), this is called “Fibronectin type-I 5” and it is residues 229-273. Therefore, 2F1-5F1 must be all of these residues 95-273.</p>
+<p>Scroll down to the <a href="https://www.uniprot.org/uniprotkb/P02751/entry#sequences">sequence section</a>. Select residues 95-273, copy and paste the sequence into a text editor and give it a sensible filename. Below, I have added a title in <a href="https://en.wikipedia.org/wiki/FASTA_format">FASTA format</a></p>
+<pre><code>&gt;2F1-5F1
+ETCFDKYTGNTYRVGDTYERPKDSMIWDCTCIGAGRGRISCTIANRCHEGGQSYKIGDTWRRPHETGGYMLECVCLGNGKGEWTCKPIAEKCFDHAAGTSYVVGETWEKPYQGWMMVDCTCLGEGSGRITCTSRNRCNDQDTRTSYRIGDTWSKKDNRGNLLQCICTGNGRGEWKCERH</code></pre>
 </section>
 <section id="fibronectin-binding-protein-a-fnbpa" class="level3">
 <h3 class="anchored" data-anchor-id="fibronectin-binding-protein-a-fnbpa">Fibronectin-binding protein A (FnBPA)</h3>
-</section>
-<section id="streptococcal-fibronectin-binding-protein-i-sfbi" class="level3">
-<h3 class="anchored" data-anchor-id="streptococcal-fibronectin-binding-protein-i-sfbi">Streptococcal fibronectin binding protein I (SfbI)</h3>
+<p>Notice from Table 1 in Meenan et al, that FnBPA1 corresponds to residues 512-550. Go to the uniprot entry for FnBPA <a href="https://www.uniprot.org/uniprotkb/P14738/entry">P14738</a>, find the amino acids 512-550, and paste them into a text file.</p>
+<pre><code>&gt;FnBPA1(512-550)
+GPIIQNNKFEYKEDTIKETLTGQYDKNLVTTVEEEYDSS</code></pre>
+<p>Notice that this is identical to the amino acid sequence for FnBPA1 in Figure 1, part B.</p>
 </section>
 </section>
 <section id="generating-models-using-the-alphafold-server" class="level2">
 <h2 class="anchored" data-anchor-id="generating-models-using-the-alphafold-server">Generating models using the AlphaFold Server</h2>
+<p>Now you have the amino acid sequences in one-letter code, it is straightforward to generate a 3D model of the protein-protein interaction. Go to the <a href="https://alphafoldserver.com/welcome">Alphafold server</a>, paste in the sequence of fibronectin (2F1-5F1), click on “Add entity”, then paste in the corresponding sequence of the bacterial peptide (FnBPA1). Click on “Continue and preview job”. Once done, your completed jobs will appear as a list below. Click on the 3 dots on the right-side and download the results as a zip file. Extract the zip file, then look for the five models (the ones ending in .cif). You can visualise these in PyMOL.</p>
 </section>
 <section id="calculating-binding-affinity-using-prodigy" class="level2">
 <h2 class="anchored" data-anchor-id="calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</h2>
+<section id="streptococcal-fibronectin-binding-protein-i-sfbi" class="level3">
+<h3 class="anchored" data-anchor-id="streptococcal-fibronectin-binding-protein-i-sfbi">Streptococcal fibronectin binding protein I (SfbI)</h3>
+</section>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
