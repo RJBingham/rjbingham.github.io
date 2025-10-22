@@ -118,16 +118,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction-to-coordinate-files" id="toc-introduction-to-coordinate-files" class="nav-link active" data-scroll-target="#introduction-to-coordinate-files">Introduction to coordinate files</a></li>
-  <li><a href="#finding-the-correct-amino-acid-sequences" id="toc-finding-the-correct-amino-acid-sequences" class="nav-link" data-scroll-target="#finding-the-correct-amino-acid-sequences">Finding the correct amino acid sequences</a>
+  <li><a href="#extracting-the-amino-acid-sequences" id="toc-extracting-the-amino-acid-sequences" class="nav-link" data-scroll-target="#extracting-the-amino-acid-sequences">Extracting the amino acid sequences</a>
   <ul class="collapse">
   <li><a href="#fibronectin-domains-2f1-to-5f1" id="toc-fibronectin-domains-2f1-to-5f1" class="nav-link" data-scroll-target="#fibronectin-domains-2f1-to-5f1">Fibronectin domains 2F1 to 5F1</a></li>
-  <li><a href="#fibronectin-binding-protein-a-fnbpa" id="toc-fibronectin-binding-protein-a-fnbpa" class="nav-link" data-scroll-target="#fibronectin-binding-protein-a-fnbpa">Fibronectin-binding protein A (FnBPA)</a></li>
+  <li><a href="#fibronectin-binding-protein-a-repeat-1fnbpa1" id="toc-fibronectin-binding-protein-a-repeat-1fnbpa1" class="nav-link" data-scroll-target="#fibronectin-binding-protein-a-repeat-1fnbpa1">Fibronectin-binding protein A Repeat 1(FnBPA1)</a></li>
   </ul></li>
   <li><a href="#generating-models-using-the-alphafold-server" id="toc-generating-models-using-the-alphafold-server" class="nav-link" data-scroll-target="#generating-models-using-the-alphafold-server">Generating models using the AlphaFold Server</a></li>
-  <li><a href="#calculating-binding-affinity-using-prodigy" id="toc-calculating-binding-affinity-using-prodigy" class="nav-link" data-scroll-target="#calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</a>
-  <ul class="collapse">
-  <li><a href="#streptococcal-fibronectin-binding-protein-i-sfbi" id="toc-streptococcal-fibronectin-binding-protein-i-sfbi" class="nav-link" data-scroll-target="#streptococcal-fibronectin-binding-protein-i-sfbi">Streptococcal fibronectin binding protein I (SfbI)</a></li>
-  </ul></li>
+  <li><a href="#calculating-binding-affinity-using-prodigy" id="toc-calculating-binding-affinity-using-prodigy" class="nav-link" data-scroll-target="#calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -164,20 +161,47 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>screenshot of the PDB)</figcaption>
 </figure>
 </div>
-<p>This is a simple text file. Open it in a text editor (e.g.&nbsp;Wordpad) and scroll down to see the 3D coordinates of each atom. There are several programs available to visualise coordinate files in this format (PyMOL, VMD, RASMOL), but these will not be covered here.</p>
-<p>There are advantages and disadvantages of using coordinates from experimental structures such as these. The primary advantage is the accuracy of the structure - we can have high confidence in the precise spatial arrangement of all atoms in the coordinate file. There are some things we need to aware of:</p>
+<p>This is a simple text file. Open it in a text editor (e.g.&nbsp;Wordpad) and scroll down to see the 3D coordinates of each atom. You will see this to specify the details for atom 1 of 3ZRZ.pdb</p>
+<pre><code>ATOM      1  N   GLU A  63      -9.834 -21.054   6.812  1.00 33.20           N </code></pre>
+<p>Reading across, the columns are:</p>
+<ul>
+<li>atom number (1),</li>
+<li>The element (N = Nitrogen)</li>
+<li>Three letter code for the type of residue (Glu = Glutamic acid)</li>
+<li>Single letter to specify the chain ID (A = Chain A)</li>
+<li>The residue number within that chain (Residue 63)</li>
+<li>Cartesian coordinates x, y, z (-9.834 -21.054 6.812)</li>
+<li>The occupancy - a number between zero to 1 (1.00)<br>
+</li>
+<li>The <a href="https://pubmed.ncbi.nlm.nih.gov/30698416/">B-factor</a> of this atom (33.20)</li>
+</ul>
+<p>There are several programs available to visualise coordinate files in this format (<a href="https://www.pymol.org/">PyMOL</a>, <a href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a>, RASMOL), but these will not be covered here.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Quick Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you open a coordinate file in PyMOL, your changes (e.g.&nbsp;colouring, deleting atoms etc.) are not automatically saved to the PDB file. The text file will remain unaltered. You can generate a new PDB file using PyMOL using File-Export Molecule, but you should always use a new filename.</p>
+</div>
+</div>
+<p>There are numerous advantages of using coordinate files from experimental methods such as X-ray crystallography. The primary advantage is the accuracy of the structure - we can have high confidence in the precise spatial arrangement of all atoms in the coordinate file. However, there are some things we need to aware of:</p>
 <ul>
 <li>loop regions may be disordered. The amino acids in these flexible regions are often missing in the coordinate files, therefore there is a break, or gap in the polypeptide.</li>
 <li>Some amino acids may have been modelled in two or more conformations (alternative conformations). Or, part of the side-chain might be missing.</li>
-<li>The coordinate file (the asymmetric unit) may have more than one copy of the molecule.<br>
+<li>The coordinate file (the asymmetric unit) may have more than one copy of the molecule of interest. For example, there are six copies of the biological relevant unit in <a href="https://www.rcsb.org/structure/2RL0">2RL0</a>. You can visualise these if you colour by chain in PyMOL. There are subtle differences between these six structures.<br>
 </li>
-<li>The coordinate files will often contain other non-protein components. If you look at 3ZRZ above, you will see a glycerol molecule, a sulphate ion and many water molecules. In addition, the bacterial peptide is acetylated at the N-terminus (ACE residue)</li>
+<li>The coordinate files will often contain other non-protein components. If you look at <a href="https://www.rcsb.org/structure/3ZRZ">3ZRZ</a>, you will see a glycerol molecule, a sulphate ion and many water molecules. In addition, the bacterial peptide is acetylated at the N-terminus (ACE residue)</li>
 </ul>
 <p>To calculate an accurate binding affinity between two molecules, we need accurate coordinate files that include all the amino acids. These missing (or extra) parts will need to be corrected.</p>
-<p>One option would be to edit the text file to remove these non-protein atoms, then rebuild and model the missing loops and side-chains. However, in 2021, Alphafold2 was released, which, for the first time made it possible to accurately predict the 3D-structure of a protein based only on the amino acid sequence (Jumper et al., 2021). The accuracy of these protein models has been shown to be excellent, especially where there is a prior structure in the PDB with high sequence identity to the target. Then, in 2024 Alphafold3 was released (Abramson et al., 2024) allowing the accurate prediction of complexes, for example the interaction between two distinct proteins. The Alphafold server is available <a href="https://alphafoldserver.com/welcome">here</a>. You will need a google account to use it. You will notice from this server that the input is simply an amino acid sequence in one-letter code.</p>
+<p>One option would be to edit the text file to remove these non-protein atoms, then rebuild and model the missing loops and side-chains. However, in 2021, Alphafold2 was released, which, for the first time made it possible to accurately predict the 3D-structure of a protein based only on the amino acid sequence <a href="https://www.nature.com/articles/s41586-021-03819-2">(Jumper et al., 2021)</a>. The accuracy of these protein models has been shown to be excellent, especially where there is a prior structure in the PDB with high sequence identity to the target. Then, in 2024 Alphafold3 was released <a href="https://www.nature.com/articles/s41586-024-07487-w">(Abramson et al., 2024)</a> allowing the accurate prediction of complexes, for example the interaction between two distinct proteins. The Alphafold server is available <a href="https://alphafoldserver.com/welcome">here</a>. You will need a google account to use it. You will notice from this server that the input is simply an amino acid sequence in one-letter code.</p>
 </section>
-<section id="finding-the-correct-amino-acid-sequences" class="level2">
-<h2 class="anchored" data-anchor-id="finding-the-correct-amino-acid-sequences">Finding the correct amino acid sequences</h2>
+<section id="extracting-the-amino-acid-sequences" class="level2">
+<h2 class="anchored" data-anchor-id="extracting-the-amino-acid-sequences">Extracting the amino acid sequences</h2>
 <p>In the example, we will find the amino acid sequences that correspond to the interaction between 2F1-5F1 and FnBPA1. This is the interaction described on row 1 of Table 1 in <a href="https://doi.org/10.1074/jbc.M703063200">Meenan et al, 2007</a>.</p>
 <section id="fibronectin-domains-2f1-to-5f1" class="level3">
 <h3 class="anchored" data-anchor-id="fibronectin-domains-2f1-to-5f1">Fibronectin domains 2F1 to 5F1</h3>
@@ -186,8 +210,8 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>&gt;2F1-5F1
 ETCFDKYTGNTYRVGDTYERPKDSMIWDCTCIGAGRGRISCTIANRCHEGGQSYKIGDTWRRPHETGGYMLECVCLGNGKGEWTCKPIAEKCFDHAAGTSYVVGETWEKPYQGWMMVDCTCLGEGSGRITCTSRNRCNDQDTRTSYRIGDTWSKKDNRGNLLQCICTGNGRGEWKCERH</code></pre>
 </section>
-<section id="fibronectin-binding-protein-a-fnbpa" class="level3">
-<h3 class="anchored" data-anchor-id="fibronectin-binding-protein-a-fnbpa">Fibronectin-binding protein A (FnBPA)</h3>
+<section id="fibronectin-binding-protein-a-repeat-1fnbpa1" class="level3">
+<h3 class="anchored" data-anchor-id="fibronectin-binding-protein-a-repeat-1fnbpa1">Fibronectin-binding protein A Repeat 1(FnBPA1)</h3>
 <p>Notice from Table 1 in Meenan et al, that FnBPA1 corresponds to residues 512-550. Go to the uniprot entry for FnBPA <a href="https://www.uniprot.org/uniprotkb/P14738/entry">P14738</a>, find the amino acids 512-550, and paste them into a text file.</p>
 <pre><code>&gt;FnBPA1(512-550)
 GPIIQNNKFEYKEDTIKETLTGQYDKNLVTTVEEEYDSS</code></pre>
@@ -200,9 +224,17 @@ GPIIQNNKFEYKEDTIKETLTGQYDKNLVTTVEEEYDSS</code></pre>
 </section>
 <section id="calculating-binding-affinity-using-prodigy" class="level2">
 <h2 class="anchored" data-anchor-id="calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</h2>
-<section id="streptococcal-fibronectin-binding-protein-i-sfbi" class="level3">
-<h3 class="anchored" data-anchor-id="streptococcal-fibronectin-binding-protein-i-sfbi">Streptococcal fibronectin binding protein I (SfbI)</h3>
-</section>
+<p>The <a href="https://rascar.science.uu.nl/prodigy/">PRODIGY</a> webserver accepts files in .pdb format. However, the output from the Alphafold server is a .cif coordinate file which has a slightly different format. One way to convert .cif to .pdb is to use PyMOL.</p>
+<ul>
+<li>As above, download the results from Alphafold and extract the zip file. You should see 5 models with the .cif extension</li>
+<li>Open one of the files in PyMOL.</li>
+<li>Click on File -&gt; Export Molecule</li>
+<li>On the Selection, use the dropdown menu to choose the correct model</li>
+<li>Click Save</li>
+<li>At the bottom-right, there is a menu that allows you to change the format of the output. Choose ‘PDB’. (not PDBx/mmcif)</li>
+<li>Type in a suitable name and click Save</li>
+</ul>
+<p>Now, submitting this to <a href="https://rascar.science.uu.nl/prodigy/">PRODIGY</a> is straightforward. Simply upload the pdb coordinate file and fill out the boxes with appropriate values then click ‘Submit PRODIGY’. Interactor 1 is fibronectin, (A) and Interactor 2 is the bacterial peptide (B).</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
