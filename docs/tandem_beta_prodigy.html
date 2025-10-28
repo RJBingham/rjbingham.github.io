@@ -123,9 +123,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#fibronectin-domains-2f1-to-5f1" id="toc-fibronectin-domains-2f1-to-5f1" class="nav-link" data-scroll-target="#fibronectin-domains-2f1-to-5f1">Fibronectin domains 2F1 to 5F1</a></li>
   <li><a href="#fibronectin-binding-protein-a-repeat-1fnbpa1" id="toc-fibronectin-binding-protein-a-repeat-1fnbpa1" class="nav-link" data-scroll-target="#fibronectin-binding-protein-a-repeat-1fnbpa1">Fibronectin-binding protein A Repeat 1(FnBPA1)</a></li>
   </ul></li>
-  <li><a href="#generating-models-using-the-alphafold-server" id="toc-generating-models-using-the-alphafold-server" class="nav-link" data-scroll-target="#generating-models-using-the-alphafold-server">Generating models using the AlphaFold Server</a></li>
+  <li><a href="#generating-a-model-of-the-tandem-beta-zipper-using-alphafold3" id="toc-generating-a-model-of-the-tandem-beta-zipper-using-alphafold3" class="nav-link" data-scroll-target="#generating-a-model-of-the-tandem-beta-zipper-using-alphafold3">Generating a model of the tandem beta-zipper using AlphaFold3</a></li>
   <li><a href="#calculating-binding-affinity-using-prodigy" id="toc-calculating-binding-affinity-using-prodigy" class="nav-link" data-scroll-target="#calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#correlation-between-prediction-and-experiment" id="toc-correlation-between-prediction-and-experiment" class="nav-link" data-scroll-target="#correlation-between-prediction-and-experiment">Correlation between prediction and experiment</a></li>
+  <li><a href="#umbrella-sampling" id="toc-umbrella-sampling" class="nav-link" data-scroll-target="#umbrella-sampling">Umbrella Sampling</a></li>
   </ul>
 </nav>
     </div>
@@ -212,15 +213,15 @@ ETCFDKYTGNTYRVGDTYERPKDSMIWDCTCIGAGRGRISCTIANRCHEGGQSYKIGDTWRRPHETGGYMLECVCLGNGK
 </section>
 <section id="fibronectin-binding-protein-a-repeat-1fnbpa1" class="level3">
 <h3 class="anchored" data-anchor-id="fibronectin-binding-protein-a-repeat-1fnbpa1">Fibronectin-binding protein A Repeat 1(FnBPA1)</h3>
-<p>Notice from Table 1 in Meenan et al, that FnBPA1 corresponds to residues 512-550. Go to the uniprot entry for FnBPA <a href="https://www.uniprot.org/uniprotkb/P14738/entry">P14738</a>, find the amino acids 512-550, and paste them into a text file.</p>
+<p>Notice from Table 1 in <a href="https://www.jbc.org/article/S0021-9258(20)74663-6/fulltext">Meenan et al</a>, that FnBPA1 corresponds to residues 512-550. Go to the uniprot entry for FnBPA <a href="https://www.uniprot.org/uniprotkb/P14738/entry">P14738</a>, find the amino acids 512-550, and paste them into a text file.</p>
 <pre><code>&gt;FnBPA1(512-550)
 GPIIQNNKFEYKEDTIKETLTGQYDKNLVTTVEEEYDSS</code></pre>
 <p>Notice that this is identical to the amino acid sequence for FnBPA1 in Figure 1, part B.</p>
 </section>
 </section>
-<section id="generating-models-using-the-alphafold-server" class="level2">
-<h2 class="anchored" data-anchor-id="generating-models-using-the-alphafold-server">Generating models using the AlphaFold Server</h2>
-<p>Now you have the amino acid sequences in one-letter code, it is straightforward to generate a 3D model of the protein-protein interaction. Go to the <a href="https://alphafoldserver.com/welcome">Alphafold server</a>, paste in the sequence of fibronectin (2F1-5F1), click on “Add entity”, then paste in the corresponding sequence of the bacterial peptide (FnBPA1). Click on “Continue and preview job”. Once done, your completed jobs will appear as a list below. Click on the 3 dots on the right-side and download the results as a zip file. Extract the zip file, then look for the five models (the ones ending in .cif). You can visualise these in PyMOL.</p>
+<section id="generating-a-model-of-the-tandem-beta-zipper-using-alphafold3" class="level2">
+<h2 class="anchored" data-anchor-id="generating-a-model-of-the-tandem-beta-zipper-using-alphafold3">Generating a model of the tandem beta-zipper using AlphaFold3</h2>
+<p>Now you have the amino acid sequences in one-letter code, it is straightforward to generate a 3D model of the protein-protein interaction. Go to the <a href="https://alphafoldserver.com/welcome">Alphafold server</a>, paste in the sequence of fibronectin (2F1-5F1), click on “Add entity”, then paste in the corresponding sequence of the bacterial peptide (FnBPA1). Click on “Continue and preview job”. Once done, your completed jobs will appear as a list on the lower part of the screen. Click on the 3 dots on the right-side and download the results as a zip file. Extract the zip file, then look for the five models (the ones ending in .cif). You can visualise this in PyMOL. You should see something similar to the figure below. <img src="images/2F15F1-FnBPA1wide.png" class="img-fluid" alt="Alphafold3 model of FnBPA-1 interaction with 2F1-5F1"> Compare this model of FnBPA-1 interacting with 2F1-5F1 with the two X-ray crystal structures (separated by the dashed line) shown in Figure 1A in <a href="https://www.pnas.org/doi/full/10.1073/pnas.0803556105">Bingham et al., (2008)</a>. Notice that the fold of the individual Fn domains is the same, but the relative orientation of the domains is slightly different. The relative orientation shown in the 2008 paper was estimated based on the superposition with other Fn typeI-typeI domain interactions. The orientation in the Alphafold model is likely to be more accurate (have higher occupancy). It is worth noting that extended multidomain systems such as this have a degree of flexibility, so the model we generate is just a snapshot of one possible orientation.</p>
 </section>
 <section id="calculating-binding-affinity-using-prodigy" class="level2">
 <h2 class="anchored" data-anchor-id="calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</h2>
@@ -235,13 +236,28 @@ GPIIQNNKFEYKEDTIKETLTGQYDKNLVTTVEEEYDSS</code></pre>
 <li>Type in a suitable name and click Save</li>
 </ul>
 <p>Now, submitting this to <a href="https://rascar.science.uu.nl/prodigy/">PRODIGY</a> is straightforward. Simply upload the pdb coordinate file and fill out the boxes with appropriate values then click ‘Submit PRODIGY’. Interactor 1 is fibronectin, (A) and Interactor 2 is the bacterial peptide (B).</p>
+<p>Within minutes, you see a result similar to below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/PRODIGY_result.png" class="img-fluid figure-img"></p>
+<figcaption>PRODIGY output</figcaption>
+</figure>
+</div>
+<p>The experimental Kd value for this interaction is 4.8 ±0.6 nM <a href="https://www.jbc.org/article/S0021-9258(20)74663-6/fulltext">(Meenan et al., 2007)</a>. However, the value from PRODIDGY is only 0.0000039 nM. (PRODIGY reports a value in moles/L so mulitiply the value above by 10^9 to convert 3.9e-15 M to 3.9e-6 nM) Why is there such a large discrepancy? The value from PRODIGY is over 1 million times smaller than the experimentally measured value. To answer this, you need to consider the dynamics of this particular type of protein-protein interaction and the limitations of the PRODIGY method (see the PRODIGY publications). The bacterial peptide transitions from being disordered in the unbound state to an extended beta-strand in the bound state. Compare this scenario to the training set of protein-protein complexes used to develop PRODIGY.</p>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<ul>
-<li>Abramson, J., Adler, J., Dunger, J. et al.&nbsp;Accurate structure prediction of biomolecular interactions with AlphaFold 3. Nature 630, 493–500 (2024).</li>
-<li>Jumper, J., Evans, R., Pritzel, A. et al.&nbsp;Highly accurate protein structure prediction with AlphaFold. Nature 596, 583–589 (2021). https://doi.org/10.1038/s41586-021-03819-2</li>
-</ul>
+<section id="correlation-between-prediction-and-experiment" class="level2">
+<h2 class="anchored" data-anchor-id="correlation-between-prediction-and-experiment">Correlation between prediction and experiment</h2>
+<p>If you repeat the above analysis for other tandem beta-zipper interactions, and you compare the predicted Kd values to those from ITC experiments, you may find there is a linear correlation similar to below. Questions: - What is the gradient of this linear model, is that informative? - Does the linear model have any predictive value? - In previous analysis, BBK32 appears as an outlier. Why? - Can this method be extended to other protein-protein interactions that involve disorder to order transitions and/or beta-strand addition</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/FnBPs_correlation.png" class="img-fluid figure-img"></p>
+<figcaption>FnBPs_correlation.png</figcaption>
+</figure>
+</div>
+</section>
+<section id="umbrella-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="umbrella-sampling">Umbrella Sampling</h2>
+<p>The method presented above clearly underestimates the binding affinity of the tandem beta-zipper. A more accurate computational method to calculate the thermodynamic parameters is <a href="umbrella_sampling_tutorial.qmd">umbrella sampling</a>.</p>
 
 
 </section>

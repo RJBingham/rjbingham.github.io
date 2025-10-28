@@ -39,7 +39,7 @@
     "href": "tandem_beta_prodigy.html#calculating-binding-affinity-using-prodigy",
     "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
     "section": "Calculating binding affinity using PRODIGY",
-    "text": "Calculating binding affinity using PRODIGY\nThe PRODIGY webserver accepts files in .pdb format. However, the output from the Alphafold server is a .cif coordinate file which has a slightly different format. One way to convert .cif to .pdb is to use PyMOL.\n\nAs above, download the results from Alphafold and extract the zip file. You should see 5 models with the .cif extension\nOpen one of the files in PyMOL.\nClick on File -&gt; Export Molecule\nOn the Selection, use the dropdown menu to choose the correct model\nClick Save\nAt the bottom-right, there is a menu that allows you to change the format of the output. Choose ‘PDB’. (not PDBx/mmcif)\nType in a suitable name and click Save\n\nNow, submitting this to PRODIGY is straightforward. Simply upload the pdb coordinate file and fill out the boxes with appropriate values then click ‘Submit PRODIGY’. Interactor 1 is fibronectin, (A) and Interactor 2 is the bacterial peptide (B)."
+    "text": "Calculating binding affinity using PRODIGY\nThe PRODIGY webserver accepts files in .pdb format. However, the output from the Alphafold server is a .cif coordinate file which has a slightly different format. One way to convert .cif to .pdb is to use PyMOL.\n\nAs above, download the results from Alphafold and extract the zip file. You should see 5 models with the .cif extension\nOpen one of the files in PyMOL.\nClick on File -&gt; Export Molecule\nOn the Selection, use the dropdown menu to choose the correct model\nClick Save\nAt the bottom-right, there is a menu that allows you to change the format of the output. Choose ‘PDB’. (not PDBx/mmcif)\nType in a suitable name and click Save\n\nNow, submitting this to PRODIGY is straightforward. Simply upload the pdb coordinate file and fill out the boxes with appropriate values then click ‘Submit PRODIGY’. Interactor 1 is fibronectin, (A) and Interactor 2 is the bacterial peptide (B).\nWithin minutes, you see a result similar to below.\n\n\n\nPRODIGY output\n\n\nThe experimental Kd value for this interaction is 4.8 ±0.6 nM (Meenan et al., 2007). However, the value from PRODIDGY is only 0.0000039 nM. (PRODIGY reports a value in moles/L so mulitiply the value above by 10^9 to convert 3.9e-15 M to 3.9e-6 nM) Why is there such a large discrepancy? The value from PRODIGY is over 1 million times smaller than the experimentally measured value. To answer this, you need to consider the dynamics of this particular type of protein-protein interaction and the limitations of the PRODIGY method (see the PRODIGY publications). The bacterial peptide transitions from being disordered in the unbound state to an extended beta-strand in the bound state. Compare this scenario to the training set of protein-protein complexes used to develop PRODIGY."
   },
   {
     "objectID": "tandem_beta_prodigy.html#references",
@@ -194,5 +194,47 @@
     "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
     "section": "Extracting the amino acid sequences",
     "text": "Extracting the amino acid sequences\nIn the example, we will find the amino acid sequences that correspond to the interaction between 2F1-5F1 and FnBPA1. This is the interaction described on row 1 of Table 1 in Meenan et al, 2007.\n\nFibronectin domains 2F1 to 5F1\nThe Uniprot entry for human fibronectin is P02751. Click on Family and Domains, then scroll down to find the 2nd type-I domain (2F1), this is called “Fibronectin type-I 2” and it is residues 95-138. Scroll down further to the 5th type-I domain (5F1), this is called “Fibronectin type-I 5” and it is residues 229-273. Therefore, 2F1-5F1 must be all of these residues 95-273.\nScroll down to the sequence section. Select residues 95-273, copy and paste the sequence into a text editor and give it a sensible filename. Below, I have added a title in FASTA format\n&gt;2F1-5F1\nETCFDKYTGNTYRVGDTYERPKDSMIWDCTCIGAGRGRISCTIANRCHEGGQSYKIGDTWRRPHETGGYMLECVCLGNGKGEWTCKPIAEKCFDHAAGTSYVVGETWEKPYQGWMMVDCTCLGEGSGRITCTSRNRCNDQDTRTSYRIGDTWSKKDNRGNLLQCICTGNGRGEWKCERH\n\n\nFibronectin-binding protein A Repeat 1(FnBPA1)\nNotice from Table 1 in Meenan et al, that FnBPA1 corresponds to residues 512-550. Go to the uniprot entry for FnBPA P14738, find the amino acids 512-550, and paste them into a text file.\n&gt;FnBPA1(512-550)\nGPIIQNNKFEYKEDTIKETLTGQYDKNLVTTVEEEYDSS\nNotice that this is identical to the amino acid sequence for FnBPA1 in Figure 1, part B."
+  },
+  {
+    "objectID": "tandem_beta_prodigy.html#generating-a-model-of-the-tandem-beta-zipper-using-alphafold3",
+    "href": "tandem_beta_prodigy.html#generating-a-model-of-the-tandem-beta-zipper-using-alphafold3",
+    "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
+    "section": "Generating a model of the tandem beta-zipper using AlphaFold3",
+    "text": "Generating a model of the tandem beta-zipper using AlphaFold3\nNow you have the amino acid sequences in one-letter code, it is straightforward to generate a 3D model of the protein-protein interaction. Go to the Alphafold server, paste in the sequence of fibronectin (2F1-5F1), click on “Add entity”, then paste in the corresponding sequence of the bacterial peptide (FnBPA1). Click on “Continue and preview job”. Once done, your completed jobs will appear as a list on the lower part of the screen. Click on the 3 dots on the right-side and download the results as a zip file. Extract the zip file, then look for the five models (the ones ending in .cif). You can visualise this in PyMOL. You should see something similar to the figure below.  Compare this model of FnBPA-1 interacting with 2F1-5F1 with the two X-ray crystal structures (separated by the dashed line) shown in Figure 1A in Bingham et al., (2008). Notice that the fold of the individual Fn domains is the same, but the relative orientation of the domains is slightly different. The relative orientation shown in the 2008 paper was estimated based on the superposition with other Fn typeI-typeI domain interactions. The orientation in the Alphafold model is likely to be more accurate (have higher occupancy). It is worth noting that extended multidomain systems such as this have a degree of flexibility, so the model we generate is just a snapshot of one possible orientation."
+  },
+  {
+    "objectID": "tandem_beta_prodigy.html#correlation-between-prediction-and-experiment",
+    "href": "tandem_beta_prodigy.html#correlation-between-prediction-and-experiment",
+    "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
+    "section": "Correlation between prediction and experiment",
+    "text": "Correlation between prediction and experiment\nIf you repeat the above analysis for other tandem beta-zipper interactions, and you compare the predicted Kd values to those from ITC experiments, you may find there is a linear correlation similar to below. Questions: - What is the gradient of this linear model, is that informative? - Does the linear model have any predictive value? - In previous analysis, BBK32 appears as an outlier. Why? - Can this method be extended to other protein-protein interactions that involve disorder to order transitions and/or beta-strand addition\n\n\n\nFnBPs_correlation.png"
+  },
+  {
+    "objectID": "tandem_beta_prodigy.html#umbrella-sampling",
+    "href": "tandem_beta_prodigy.html#umbrella-sampling",
+    "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
+    "section": "Umbrella Sampling",
+    "text": "Umbrella Sampling\nThe method presented above clearly underestimates the binding affinity of the tandem beta-zipper. A more accurate computational method to calculate the thermodynamic parameters is umbrella sampling."
+  },
+  {
+    "objectID": "6max_cash.html",
+    "href": "6max_cash.html",
+    "title": "100bb deep, cash 6-max",
+    "section": "",
+    "text": "GTO Wizard insights specific to 100bb deep, $50NL, 6-max cash\nOpen utg (18%): ATo+, A2s+, KJo+, K5s+, Q9s+ 77+ HJ (21%): ATo+, A2s+, KTo+, K5s+, Q8s+ 66+ CO (28%): A8o+, A2s+, KTo+, K3s+, Q5s+, J7s, 55+, start raising A5o as part of polarised range (not A6o). The small pairs below 5s can be raised with low frequency. BU (42%): Q2s+, J5s+, T6s, 86s, 75s, A3o (not A2o), K8o, Q9o, J9o, T9o. 33+ (22 with low frequency)\nSB: 3-bet or fold. A5s is polarised 3-bet. A6s to A8s is fold BB: Lots of calling for value with a polarised 3-betting range e.g. A5o, Q4s, K3s, A2s."
+  },
+  {
+    "objectID": "umbrella_sampling_tutorial.html",
+    "href": "umbrella_sampling_tutorial.html",
+    "title": "umbrella tutorial",
+    "section": "",
+    "text": "in progress"
+  },
+  {
+    "objectID": "umbrella_sampling_tutorial.html#umbrella-sampling",
+    "href": "umbrella_sampling_tutorial.html#umbrella-sampling",
+    "title": "umbrella tutorial",
+    "section": "",
+    "text": "in progress"
   }
 ]
