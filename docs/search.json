@@ -11,7 +11,7 @@
     "href": "tandem_beta_prodigy.html",
     "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
     "section": "",
-    "text": "This guide is written for project students at undergraduate or MSc level. The page is under construction"
+    "text": "This new guide is written for project students at undergraduate or MSc level. The page is under construction"
   },
   {
     "objectID": "tandem_beta_prodigy.html#introduction-to-coordinate-files",
@@ -102,14 +102,14 @@
     "href": "about.html",
     "title": "Personal Interests",
     "section": "",
-    "text": "When I am not working, I can often be found running or mountain biking on the local trails. When I was younger, I did a lot of rock climbing. More recently, I have completed a number of ultramarathons (very slowly)."
+    "text": "My research interests are described here."
   },
   {
     "objectID": "about.html#running-and-cycling",
     "href": "about.html#running-and-cycling",
     "title": "Personal Interests",
-    "section": "",
-    "text": "When I am not working, I can often be found running or mountain biking on the local trails. When I was younger, I did a lot of rock climbing. More recently, I have completed a number of ultramarathons (very slowly)."
+    "section": "Running and Cycling",
+    "text": "Running and Cycling\nWhen I am not working, I can often be found running or mountain biking on the local trails. When I was younger, I did a lot of rock climbing. More recently, I have completed a number of ultramarathons (very slowly)."
   },
   {
     "objectID": "about.html#astrobiology",
@@ -193,7 +193,7 @@
     "href": "tandem_beta_prodigy.html#extracting-the-amino-acid-sequences",
     "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
     "section": "Extracting the amino acid sequences",
-    "text": "Extracting the amino acid sequences\nIn the example, we will find the amino acid sequences that correspond to the interaction between 2F1-5F1 and FnBPA1. This is the interaction described on row 1 of Table 1 in Meenan et al, 2007.\n\nFibronectin domains 2F1 to 5F1\nThe Uniprot entry for human fibronectin is P02751. Click on Family and Domains, then scroll down to find the 2nd type-I domain (2F1), this is called “Fibronectin type-I 2” and it is residues 95-138. Scroll down further to the 5th type-I domain (5F1), this is called “Fibronectin type-I 5” and it is residues 229-273. Therefore, 2F1-5F1 must be all of these residues 95-273.\nScroll down to the sequence section. Select residues 95-273, copy and paste the sequence into a text editor and give it a sensible filename. Below, I have added a title in FASTA format\n&gt;2F1-5F1\nETCFDKYTGNTYRVGDTYERPKDSMIWDCTCIGAGRGRISCTIANRCHEGGQSYKIGDTWRRPHETGGYMLECVCLGNGKGEWTCKPIAEKCFDHAAGTSYVVGETWEKPYQGWMMVDCTCLGEGSGRITCTSRNRCNDQDTRTSYRIGDTWSKKDNRGNLLQCICTGNGRGEWKCERH\n\n\nFibronectin-binding protein A Repeat 1(FnBPA1)\nNotice from Table 1 in Meenan et al, that FnBPA1 corresponds to residues 512-550. Go to the uniprot entry for FnBPA P14738, find the amino acids 512-550, and paste them into a text file.\n&gt;FnBPA1(512-550)\nGPIIQNNKFEYKEDTIKETLTGQYDKNLVTTVEEEYDSS\nNotice that this is identical to the amino acid sequence for FnBPA1 in Figure 1, part B."
+    "text": "Extracting the amino acid sequences\nIn order to generate Alphafold models, we need to extract the correct amino acid sequences of the target proteins. In the example, we will find the amino acid sequences that correspond to the interaction between two different bacterial peptides (SfbI and FnBPA1) and the 2nd and 3rd F1 domains of human fibronectin (2F1-5F1).\n\nStaphylococcus aureus Fibronectin-binding Protein A Repeat 1 (FnBPA-1)\nFnBPA is a bacterial peptide from Staphylococcus aureus with 11 Fn-binding repeats. The interaction between FnBPA and fibronectin is descibed in Meenan et al, 2007.\nNotice from Table 1 in Meenan et al, that FnBPA-1 corresponds to residues 512-550. Go to the uniprot entry for FnBPA P14738, find the amino acids 512-550, and paste them into a text file, as below.\n&gt;FnBPA1(512-550)\nGPIIQNNKFEYKEDTIKETLTGQYDKNLVTTVEEEYDSS\nNotice that this is identical to the amino acid sequence for FnBPA1 in Figure 1, part B.\n\n\nStreptococcal fibronectin-binding protein I (SfbI)\nSfbI is bacterial peptide from Streptococcus pyogenes. The intereaction between SfBI and fibronectin is described in Schwarz-Linek et al., (2003). The five repeats of SfBI are numbered 1-5 (top of Figure 3). In this example, we are interested in the interaction between 2F1-3F1 and repeat number 5. On Figure 3 you can see that the researchers have measured the binding affinity for 3 fragments of SfbI-5. The middle one with the sequence TGMSGFSETVTIVEDTRP binds to 2F1-3F1 with a measured binding affinity of 3.6 micromolar. The figure is an image, so we cannot cut and paste this peptide sequence from here. Typing it out is error-prone and time consuming. If you search the uniprotKB for SfbI. You will see many entries from different isolates, many of which will have sequence variations from what was experimentally measured in Schwarz-Linek et al., (2003). I could not find SfbI in the reference proteome on Uniprot, possibly because the protein is annotated with a different name. Instead, we will search the NCBI. Type “SfbI” in to the search box, then select “RefSeq” on the left side to only show sequences for reference proteomes:\n\n\nThe top hit is Fibronectin-binding protein PrtF1/SfbI from Streptococcus pyogenes. Click on it and scroll to the amino acid sequence at the bottom. You now need to find the match between Figure 3 in Schwarz-Linek et al., (2003) and this sequence. You can use Control-F, but be aware of the spaces. Below you can see the region of SfbI-5 that binds to 2F1-3F1 (TGMSGFSETVTIVEDTRP).  Copy this sequence and paste it into a text file. Bookmark the Refseq above for easy access in the future.\nSfbI-5_middle\nTGMSGFSETVTIVEDTRP\n\n\nFibronectin domains 2F1 to 5F1\nThe Uniprot entry for human fibronectin is P02751. Click on Family and Domains, then scroll down to find the 2nd type-I domain (2F1), this is called “Fibronectin type-I 2” and it is residues 95-138. Scroll down further to the 5th type-I domain (5F1), this is called “Fibronectin type-I 5” and it is residues 229-273. Therefore, 2F1-5F1 must be all of these residues 95-273.\nScroll down to the sequence section. Select residues 95-273, copy and paste the sequence into a text editor and give it a sensible filename. Below, I have added a title in FASTA format\n&gt;2F1-5F1\nETCFDKYTGNTYRVGDTYERPKDSMIWDCTCIGAGRGRISCTIANRCHEGGQSYKIGDTWRRPHETGGYMLECVCLGNGKGEWTCKPIAEKCFDHAAGTSYVVGETWEKPYQGWMMVDCTCLGEGSGRITCTSRNRCNDQDTRTSYRIGDTWSKKDNRGNLLQCICTGNGRGEWKCERH"
   },
   {
     "objectID": "tandem_beta_prodigy.html#generating-a-model-of-the-tandem-beta-zipper-using-alphafold3",
@@ -264,5 +264,12 @@
     "title": "Richard J Bingham",
     "section": "Cooking",
     "text": "Cooking\nHere are some of my favourite recipes.\n\nPilau Rice"
+  },
+  {
+    "objectID": "about.html#research",
+    "href": "about.html#research",
+    "title": "Personal Interests",
+    "section": "",
+    "text": "My research interests are described here."
   }
 ]

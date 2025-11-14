@@ -1,1 +1,6 @@
 /* css styles */
+
+blockquote code,
+blockquote pre {
+  background-color: #f0f0f0;
+}

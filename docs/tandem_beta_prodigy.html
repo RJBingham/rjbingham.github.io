@@ -116,8 +116,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction-to-coordinate-files" id="toc-introduction-to-coordinate-files" class="nav-link active" data-scroll-target="#introduction-to-coordinate-files">Introduction to coordinate files</a></li>
   <li><a href="#extracting-the-amino-acid-sequences" id="toc-extracting-the-amino-acid-sequences" class="nav-link" data-scroll-target="#extracting-the-amino-acid-sequences">Extracting the amino acid sequences</a>
   <ul class="collapse">
+  <li><a href="#staphylococcus-aureus-fibronectin-binding-protein-a-repeat-1-fnbpa-1" id="toc-staphylococcus-aureus-fibronectin-binding-protein-a-repeat-1-fnbpa-1" class="nav-link" data-scroll-target="#staphylococcus-aureus-fibronectin-binding-protein-a-repeat-1-fnbpa-1"><em>Staphylococcus aureus</em> Fibronectin-binding Protein A Repeat 1 (FnBPA-1)</a></li>
+  <li><a href="#streptococcal-fibronectin-binding-protein-i-sfbi" id="toc-streptococcal-fibronectin-binding-protein-i-sfbi" class="nav-link" data-scroll-target="#streptococcal-fibronectin-binding-protein-i-sfbi">Streptococcal fibronectin-binding protein I (SfbI)</a></li>
   <li><a href="#fibronectin-domains-2f1-to-5f1" id="toc-fibronectin-domains-2f1-to-5f1" class="nav-link" data-scroll-target="#fibronectin-domains-2f1-to-5f1">Fibronectin domains 2F1 to 5F1</a></li>
-  <li><a href="#fibronectin-binding-protein-a-repeat-1fnbpa1" id="toc-fibronectin-binding-protein-a-repeat-1fnbpa1" class="nav-link" data-scroll-target="#fibronectin-binding-protein-a-repeat-1fnbpa1">Fibronectin-binding protein A Repeat 1(FnBPA1)</a></li>
   </ul></li>
   <li><a href="#generating-a-model-of-the-tandem-beta-zipper-using-alphafold3" id="toc-generating-a-model-of-the-tandem-beta-zipper-using-alphafold3" class="nav-link" data-scroll-target="#generating-a-model-of-the-tandem-beta-zipper-using-alphafold3">Generating a model of the tandem beta-zipper using AlphaFold3</a></li>
   <li><a href="#calculating-binding-affinity-using-prodigy" id="toc-calculating-binding-affinity-using-prodigy" class="nav-link" data-scroll-target="#calculating-binding-affinity-using-prodigy">Calculating binding affinity using PRODIGY</a></li>
@@ -148,10 +149,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This guide is written for project students at undergraduate or MSc level. The page is under construction</p>
+<style>
+blockquote code,
+blockquote pre {
+  background-color: #d8d8d8;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.75em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+</style>
+<p>This new guide is written for project students at undergraduate or MSc level. The page is under construction</p>
 <section id="introduction-to-coordinate-files" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-to-coordinate-files">Introduction to coordinate files</h2>
-<p>Several experimental structures (from NMR and X-ray crystallography) are available of bacterial peptides in complex with fibronectin. The structure files can be downloaded from the Protein Data Bank (PDB). For example, see the “Crystal structure of the second and third fibronectin F1 modules in complex with a fragment of Streptococcus pyogenes SfbI-5”, PDB accession code <a href="https://www.rcsb.org/structure/3ZRZ">3ZRZ</a>. Click on Download Files, then choose either the PDBx/mmCIF Format, or the Legacy PDB Format.</p>
+<p>Several experimental structures (from NMR and X-ray crystallography) are available of bacterial peptides in complex with fibronectin. The structure files can be downloaded from the Protein Data Bank (PDB). For example, see the “Crystal structure of the second and third fibronectin F1 modules in complex with a fragment of <em>Streptococcus pyogenes</em> SfbI-5”, PDB accession code <a href="https://www.rcsb.org/structure/3ZRZ">3ZRZ</a>. Click on Download Files, then choose either the PDBx/mmCIF Format, or the Legacy PDB Format.</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p><img src="images/PDB_screenshot.png" class="img-fluid figure-img" style="width:30.0%"></p>
@@ -199,20 +210,30 @@ Quick Tip
 </section>
 <section id="extracting-the-amino-acid-sequences" class="level2">
 <h2 class="anchored" data-anchor-id="extracting-the-amino-acid-sequences">Extracting the amino acid sequences</h2>
-<p>In the example, we will find the amino acid sequences that correspond to the interaction between 2F1-5F1 and FnBPA1. This is the interaction described on row 1 of Table 1 in <a href="https://doi.org/10.1074/jbc.M703063200">Meenan et al, 2007</a>.</p>
+<p>In order to generate Alphafold models, we need to extract the correct amino acid sequences of the target proteins. In the example, we will find the amino acid sequences that correspond to the interaction between two different bacterial peptides (SfbI and FnBPA1) and the 2nd and 3rd F1 domains of human fibronectin (2F1-5F1).</p>
+<section id="staphylococcus-aureus-fibronectin-binding-protein-a-repeat-1-fnbpa-1" class="level3">
+<h3 class="anchored" data-anchor-id="staphylococcus-aureus-fibronectin-binding-protein-a-repeat-1-fnbpa-1"><em>Staphylococcus aureus</em> Fibronectin-binding Protein A Repeat 1 (FnBPA-1)</h3>
+<p>FnBPA is a bacterial peptide from <em>Staphylococcus aureus</em> with 11 Fn-binding repeats. The interaction between FnBPA and fibronectin is descibed in <a href="https://doi.org/10.1074/jbc.M703063200">Meenan et al, 2007</a>.</p>
+<p>Notice from Table 1 in <a href="https://www.jbc.org/article/S0021-9258(20)74663-6/fulltext">Meenan et al</a>, that FnBPA-1 corresponds to residues 512-550. Go to the uniprot entry for FnBPA <a href="https://www.uniprot.org/uniprotkb/P14738/entry">P14738</a>, find the amino acids 512-550, and paste them into a text file, as below.</p>
+<pre><code>&gt;FnBPA1(512-550)
+GPIIQNNKFEYKEDTIKETLTGQYDKNLVTTVEEEYDSS</code></pre>
+<p>Notice that this is identical to the amino acid sequence for FnBPA1 in Figure 1, part B.</p>
+</section>
+<section id="streptococcal-fibronectin-binding-protein-i-sfbi" class="level3">
+<h3 class="anchored" data-anchor-id="streptococcal-fibronectin-binding-protein-i-sfbi">Streptococcal fibronectin-binding protein I (SfbI)</h3>
+<p>SfbI is bacterial peptide from <em>Streptococcus pyogenes</em>. The intereaction between SfBI and fibronectin is described in <a href="https://www.nature.com/articles/nature01589">Schwarz-Linek et al., (2003)</a>. The five repeats of SfBI are numbered 1-5 (top of Figure 3). In this example, we are interested in the interaction between 2F1-3F1 and repeat number 5. On Figure 3 you can see that the researchers have measured the binding affinity for 3 fragments of SfbI-5. The middle one with the sequence TGMSGFSETVTIVEDTRP binds to 2F1-3F1 with a measured binding affinity of 3.6 micromolar. The figure is an image, so we cannot cut and paste this peptide sequence from here. Typing it out is error-prone and time consuming. If you search the <a href="https://www.uniprot.org/">uniprotKB</a> for SfbI. You will see many entries from different isolates, many of which will have sequence variations from what was experimentally measured in <a href="https://www.nature.com/articles/nature01589">Schwarz-Linek et al., (2003)</a>. I could not find SfbI in the reference proteome on Uniprot, possibly because the protein is annotated with a different name. Instead, we will search the <a href="https://www.ncbi.nlm.nih.gov/protein/">NCBI</a>. Type “SfbI” in to the search box, then select “RefSeq” on the left side to only show sequences for reference proteomes:</p>
+<p><img src="images/NCBI_search.png" class="img-fluid" style="width:60.0%"></p>
+<p><img src="images/RefSeq.png" class="img-fluid" style="width:20.0%"></p>
+<p>The top hit is <a href="https://www.ncbi.nlm.nih.gov/protein/WP_415244991.1">Fibronectin-binding protein PrtF1/SfbI</a> from <em>Streptococcus pyogenes</em>. Click on it and scroll to the amino acid sequence at the bottom. You now need to find the match between Figure 3 in <a href="https://www.nature.com/articles/nature01589">Schwarz-Linek et al., (2003)</a> and this sequence. You can use Control-F, but be aware of the spaces. Below you can see the region of SfbI-5 that binds to 2F1-3F1 (TGMSGFSETVTIVEDTRP). <img src="images/sequence_match.png" class="img-fluid"> Copy this sequence and paste it into a text file. Bookmark the Refseq above for easy access in the future.</p>
+<pre><code>SfbI-5_middle
+TGMSGFSETVTIVEDTRP</code></pre>
+</section>
 <section id="fibronectin-domains-2f1-to-5f1" class="level3">
 <h3 class="anchored" data-anchor-id="fibronectin-domains-2f1-to-5f1">Fibronectin domains 2F1 to 5F1</h3>
 <p>The Uniprot entry for human fibronectin is <a href="https://www.uniprot.org/uniprotkb/P02751/entry">P02751</a>. Click on Family and Domains, then scroll down to find the 2nd type-I domain (2F1), this is called “Fibronectin type-I 2” and it is residues 95-138. Scroll down further to the 5th type-I domain (5F1), this is called “Fibronectin type-I 5” and it is residues 229-273. Therefore, 2F1-5F1 must be all of these residues 95-273.</p>
 <p>Scroll down to the <a href="https://www.uniprot.org/uniprotkb/P02751/entry#sequences">sequence section</a>. Select residues 95-273, copy and paste the sequence into a text editor and give it a sensible filename. Below, I have added a title in <a href="https://en.wikipedia.org/wiki/FASTA_format">FASTA format</a></p>
 <pre><code>&gt;2F1-5F1
 ETCFDKYTGNTYRVGDTYERPKDSMIWDCTCIGAGRGRISCTIANRCHEGGQSYKIGDTWRRPHETGGYMLECVCLGNGKGEWTCKPIAEKCFDHAAGTSYVVGETWEKPYQGWMMVDCTCLGEGSGRITCTSRNRCNDQDTRTSYRIGDTWSKKDNRGNLLQCICTGNGRGEWKCERH</code></pre>
-</section>
-<section id="fibronectin-binding-protein-a-repeat-1fnbpa1" class="level3">
-<h3 class="anchored" data-anchor-id="fibronectin-binding-protein-a-repeat-1fnbpa1">Fibronectin-binding protein A Repeat 1(FnBPA1)</h3>
-<p>Notice from Table 1 in <a href="https://www.jbc.org/article/S0021-9258(20)74663-6/fulltext">Meenan et al</a>, that FnBPA1 corresponds to residues 512-550. Go to the uniprot entry for FnBPA <a href="https://www.uniprot.org/uniprotkb/P14738/entry">P14738</a>, find the amino acids 512-550, and paste them into a text file.</p>
-<pre><code>&gt;FnBPA1(512-550)
-GPIIQNNKFEYKEDTIKETLTGQYDKNLVTTVEEEYDSS</code></pre>
-<p>Notice that this is identical to the amino acid sequence for FnBPA1 in Figure 1, part B.</p>
 </section>
 </section>
 <section id="generating-a-model-of-the-tandem-beta-zipper-using-alphafold3" class="level2">
