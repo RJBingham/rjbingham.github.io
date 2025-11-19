@@ -11,7 +11,7 @@
     "href": "tandem_beta_prodigy.html",
     "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
     "section": "",
-    "text": "This new guide is written for project students at undergraduate or MSc level. The page is under construction"
+    "text": "This guide is written for project students at undergraduate or MSc level.\nThe aim is to extract the amino acid sequences for the target proteins, build an Alphafold model of the complex, then submit this to PRODIGY to estimate the binding affinity. We start with an introduction to coordinate files. ## Introduction to coordinate files\nSeveral experimental structures (from NMR and X-ray crystallography) are available of bacterial peptides in complex with fibronectin. The structure files can be downloaded from the Protein Data Bank (PDB). For example, see the “Crystal structure of the second and third fibronectin F1 modules in complex with a fragment of Streptococcus pyogenes SfbI-5”, PDB accession code 3ZRZ. Click on Download Files, then choose either the PDBx/mmCIF Format, or the Legacy PDB Format.\nThis is a simple text file. Open it in a text editor (e.g. Wordpad) and scroll down to see the 3D coordinates of each atom. You will see this to specify the details for atom 1 of 3ZRZ.pdb\nReading across, the columns are:\nThere are several programs available to visualise coordinate files in this format (PyMOL, VMD, RASMOL), but these will not be covered here.\nThere are numerous advantages of using coordinate files from experimental methods such as X-ray crystallography. The primary advantage is the accuracy of the structure - we can have high confidence in the precise spatial arrangement of all atoms in the coordinate file. However, there are some things we need to aware of:\nTo calculate an accurate binding affinity between two molecules, we need accurate coordinate files that include all the amino acids. These missing (or extra) parts will need to be corrected.\nOne option would be to edit the text file to remove these non-protein atoms, then rebuild and model the missing loops and side-chains. However, in 2021, Alphafold2 was released, which, for the first time made it possible to accurately predict the 3D-structure of a protein based only on the amino acid sequence (Jumper et al., 2021). The accuracy of these protein models has been shown to be excellent, especially where there is a prior structure in the PDB with high sequence identity to the target. Then, in 2024 Alphafold3 was released (Abramson et al., 2024) allowing the accurate prediction of complexes, for example the interaction between two distinct proteins. The Alphafold server is available here. You will need a google account to use it. You will notice from this server that the input is simply an amino acid sequence in one-letter code."
   },
   {
     "objectID": "tandem_beta_prodigy.html#introduction-to-coordinate-files",
@@ -74,7 +74,7 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "I first developed an interest in structural molecular biology during my undergraduate degree at the University of Sheffield. To pursue this interest, I studied for a PhD in X-ray crystallography at the Astbury Centre for Structural Molecular Biology, University of Leeds under the supervision of Prof. Simon Phillips. I then worked as a postdoctoral research fellow under the supervision of Prof. Steve Homans and Prof. Steve Baldwin. By studying how a range of small molecules bind to the hydrophobic pocket of a small protein, we were able to demonstrate that hydrophobic ligand-protein interactions can be enthalpy driven with a significant contribution from London dispersion forces.\nIn 2006, I started a postdoctoral position at the University of York work under the supervision of Prof. Jennifer Potts on fibronectin-binding proteins from pathogenic bacteria, elucidating mechanisms of the beta-zipper interaction.\nI joined the Department of Biological Sciences at the University of Huddersfield in September 2008."
+    "text": "I first developed an interest in structural molecular biology during my undergraduate degree at the University of Sheffield. To pursue this interest, I studied for a PhD in X-ray crystallography at the Astbury Centre for Structural Molecular Biology, University of Leeds under the supervision of Prof. Simon Phillips. I then worked as a postdoctoral research fellow under the supervision of Prof. Steve Homans and Prof. Steve Baldwin. By studying how a range of small molecules bind to the hydrophobic pocket of a small protein, we were able to demonstrate that non-polar protein-ligand interactions can be enthalpy driven with a significant contribution from London dispersion forces.\nIn 2006, I started a postdoctoral position at the University of York work under the supervision of Prof. Jennifer Potts investigating fibronectin-binding proteins from pathogenic bacteria, elucidating mechanisms of the tandem beta-zipper interaction.\nI joined the Department of Biological Sciences at the University of Huddersfield in September 2008."
   },
   {
     "objectID": "research.html#protein-science",
@@ -242,7 +242,7 @@
     "href": "index.html#research",
     "title": "Richard J Bingham",
     "section": "Research",
-    "text": "Research\nMy research interests are described here."
+    "text": "Research\nMuch of my research has centred on bacterial and viral surface proteins, with a focus on the molecular mechanisms underlying pathogenicity and immune evasion. My current work applies molecular dynamics simulations, including umbrella sampling, to investigate protein–protein interactions that are central to the pathology of Staphylococcus aureus and Borrelia burgdorferi. I also pursue projects in viral protein science, exploring fundamental differences between viral and non-viral systems. More detail on my research interests are described here."
   },
   {
     "objectID": "index.html#running-and-cycling",
@@ -263,7 +263,7 @@
     "href": "index.html#cooking",
     "title": "Richard J Bingham",
     "section": "Cooking",
-    "text": "Cooking\nHere are some of my favourite recipes.\n\nPilau Rice"
+    "text": "Cooking\nI initially wrote these recipes to help me learn Quarto. Keeping them here helps me remember what to do… - Pilau Rice"
   },
   {
     "objectID": "about.html#research",
@@ -271,5 +271,47 @@
     "title": "Personal Interests",
     "section": "",
     "text": "My research interests are described here."
+  },
+  {
+    "objectID": "data/generate_graph.html",
+    "href": "data/generate_graph.html",
+    "title": "graph",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(janitor)\n\n\nAttaching package: 'janitor'\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(readxl)\ndf &lt;- read_xlsx(\"Fibronectin Binding proteins updated with plot.xlsx\") |&gt; \n  clean_names()"
+  },
+  {
+    "objectID": "data/generate_graph.html#load-the-data",
+    "href": "data/generate_graph.html#load-the-data",
+    "title": "graph",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(janitor)\n\n\nAttaching package: 'janitor'\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(readxl)\ndf &lt;- read_xlsx(\"Fibronectin Binding proteins updated with plot.xlsx\") |&gt; \n  clean_names()"
+  },
+  {
+    "objectID": "data/generate_graph.html#draw-the-graph",
+    "href": "data/generate_graph.html#draw-the-graph",
+    "title": "graph",
+    "section": "Draw the graph",
+    "text": "Draw the graph\n\ndf |&gt; ggplot()+aes(x=log_of_experimental_binding_affinity,y=log_of_prodigy_kd_n_m)+\n  geom_point (aes(colour = organism))+\n  geom_smooth(method= \"lm\")+\n  scale_x_continuous(\n  labels = function(x) paste0(10^x, \" nM\"))+\n  xlab(\"Experimental binding affinity (Kd)\")+\n  scale_y_continuous(\n  labels = function(x) paste0(10^x, \" nM\"))+\n  ylab(\"Predicted binding affinity (Kd)\")+\n  ggtitle(\"\") +\n    geom_text(data = df |&gt; filter(name_of_bacterial_peptide == \"BBK32\"),\n            aes(label = name_of_bacterial_peptide), \n            vjust = -1, \n            colour = \"black\") +\n  theme(legend.text = element_text(face = \"italic\"))\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\nggsave(\"graph.png\", width = 6, height = 4, dpi = 300)\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Each year, I incorporate a thought experiment into the first-year induction programme where students design an experiment to detect life in water from Europa.\n\n\n\nMe giving a lecture on astrobiology (photo by Yun Wah Lam)"
+  },
+  {
+    "objectID": "teaching.html#problem-solving",
+    "href": "teaching.html#problem-solving",
+    "title": "Teaching",
+    "section": "",
+    "text": "Each year, I incorporate a thought experiment into the first-year induction programme where students design an experiment to detect life in water from Europa.\n\n\n\nMe giving a lecture on astrobiology (photo by Yun Wah Lam)"
+  },
+  {
+    "objectID": "research.html#current-projects-and-tutorials",
+    "href": "research.html#current-projects-and-tutorials",
+    "title": "Research",
+    "section": "Current Projects and Tutorials",
+    "text": "Current Projects and Tutorials\nSince 2008, I have had the pleasure of supervising numerous undergraduate and postgraduate student projects. I have a range of current projects in protein science, mainly focused on using computational techniques to aid our understanding of experimental results.\n\nTutorial to estimate the binding affinity of a tandem beta-zipper using PRODIGY\nUmbrella Sampling"
   }
 ]
