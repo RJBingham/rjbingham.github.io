@@ -1,0 +1,32 @@
+---
+title: "Research"
+---
+
+I first developed an interest in structural molecular biology during my undergraduate degree at the University of Sheffield. To pursue this interest, I studied for a PhD in X-ray crystallography at the Astbury Centre for Structural Molecular Biology, University of Leeds under the supervision of Prof. Simon Phillips. I then worked as a postdoctoral research fellow under the supervision of Prof. Steve Homans and Prof. Steve Baldwin. By studying how a range of small molecules bind to the hydrophobic pocket of a small protein, we were able to demonstrate that non-polar protein-ligand interactions can be enthalpy driven with a significant contribution from London dispersion forces.
+
+In 2006, I started a postdoctoral position at the University of York work under the supervision of Prof. Jennifer Potts investigating fibronectin-binding proteins from pathogenic bacteria, elucidating mechanisms of the tandem beta-zipper interaction.
+
+I joined the Department of Biological Sciences at the University of Huddersfield in September 2008.
+
+## Current Projects and Tutorials
+Since 2008, I have had the pleasure of supervising numerous undergraduate and postgraduate student projects.
+I have a range of current projects in protein science, mainly focused on using computational techniques to aid our understanding of experimental results.
+
+-   [Tutorial to calculate RMSD, TM-Score and GDT](homodimers.qmd)
+-   [Tutorial to estimate the binding affinity of a tandem beta-zipper using PRODIGY](tandem_beta_prodigy.qmd)
+-   [Umbrella Sampling](umbrella_sampling_tutorial.qmd)
+
+
+## Publications
+
+Click [here to see a list of all my publications](all_publications.qmd) or click on one of the images below. <!-- Generates a row of four images --> <!-- could also include "enzymes" -->
+
+::: {style="display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;"}
+<a href="protein_science_publications.qmd" title="protein illustration"> <img src="images/proteins.png" style="width: 23%;"/> </a>
+
+<a href="pathogen_publications.qmd" title="Image of S. aureus and a virus"> <img src="images/pathogens.png" style="width: 23%;"/> </a>
+
+<a href="pectin_publications.qmd" title="illustration of carbohydrate"> <img src="images/pectin.png" style="width: 23%;"/> </a>
+
+<a href="thermodynamics_publications.qmd" title="Thermodynamics"> <img src="images/thermodynamics.png" style="width: 23%;"/> </a>
+:::

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Research – RJBingham</title>
+<title>Homodimers – RJBingham</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./research.html" aria-current="page"> 
+    <a class="nav-link" href="./research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
@@ -117,8 +117,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#current-projects-and-tutorials" id="toc-current-projects-and-tutorials" class="nav-link active" data-scroll-target="#current-projects-and-tutorials">Current Projects and Tutorials</a></li>
-  <li><a href="#publications" id="toc-publications" class="nav-link" data-scroll-target="#publications">Publications</a></li>
+  <li><a href="#calculating-rmsd-using-pymol-two-molecules" id="toc-calculating-rmsd-using-pymol-two-molecules" class="nav-link active" data-scroll-target="#calculating-rmsd-using-pymol-two-molecules">Calculating RMSD using PyMol (two molecules)</a></li>
+  <li><a href="#calculating-rmsd-using-pymol-two-chains-within-the-same-pdb-file" id="toc-calculating-rmsd-using-pymol-two-chains-within-the-same-pdb-file" class="nav-link" data-scroll-target="#calculating-rmsd-using-pymol-two-chains-within-the-same-pdb-file">Calculating RMSD using PyMol (two chains within the same PDB file)</a></li>
+  <li><a href="#tm-score-zhang-lab" id="toc-tm-score-zhang-lab" class="nav-link" data-scroll-target="#tm-score-zhang-lab">TM-Score (Zhang Lab)</a></li>
+  <li><a href="#the-global-distance-test-gdt" id="toc-the-global-distance-test-gdt" class="nav-link" data-scroll-target="#the-global-distance-test-gdt">The global distance test (GDT)</a></li>
   </ul>
 </nav>
     </div>
@@ -127,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Research</h1>
+<h1 class="title">Homodimers</h1>
 </div>
 
 
@@ -144,27 +146,54 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>I first developed an interest in structural molecular biology during my undergraduate degree at the University of Sheffield. To pursue this interest, I studied for a PhD in X-ray crystallography at the Astbury Centre for Structural Molecular Biology, University of Leeds under the supervision of Prof.&nbsp;Simon Phillips. I then worked as a postdoctoral research fellow under the supervision of Prof.&nbsp;Steve Homans and Prof.&nbsp;Steve Baldwin. By studying how a range of small molecules bind to the hydrophobic pocket of a small protein, we were able to demonstrate that non-polar protein-ligand interactions can be enthalpy driven with a significant contribution from London dispersion forces.</p>
-<p>In 2006, I started a postdoctoral position at the University of York work under the supervision of Prof.&nbsp;Jennifer Potts investigating fibronectin-binding proteins from pathogenic bacteria, elucidating mechanisms of the tandem beta-zipper interaction.</p>
-<p>I joined the Department of Biological Sciences at the University of Huddersfield in September 2008.</p>
-<section id="current-projects-and-tutorials" class="level2">
-<h2 class="anchored" data-anchor-id="current-projects-and-tutorials">Current Projects and Tutorials</h2>
-<p>Since 2008, I have had the pleasure of supervising numerous undergraduate and postgraduate student projects. I have a range of current projects in protein science, mainly focused on using computational techniques to aid our understanding of experimental results.</p>
-<ul>
-<li><a href="./homodimers.html">Tutorial to calculate RMSD, TM-Score and GDT</a></li>
-<li><a href="./tandem_beta_prodigy.html">Tutorial to estimate the binding affinity of a tandem beta-zipper using PRODIGY</a></li>
-<li><a href="./umbrella_sampling_tutorial.html">Umbrella Sampling</a></li>
-</ul>
+<p>A short guide on how to calculate structural similarity between two polypeptide chains.</p>
+<section id="calculating-rmsd-using-pymol-two-molecules" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-rmsd-using-pymol-two-molecules">Calculating RMSD using PyMol (two molecules)</h2>
+<p>If you have two separate PDB files they will appear as two lines with separate controls. In the image below I have loaded in structures for 7JTL and 7MX9. One way to superimpose them is to click on the A for ‘Action’, then select ‘align’, ‘to molecule’, then select the template, in this case 7JTL. <img src="images/pymol_screenshot1.png" class="img-fluid"> The output in the console will report the RMSD and the number of C-alpha atoms (CA).</p>
+<pre><code> Executive: RMSD =    0.410 (71 to 71 atoms)
+ Executive: object "aln_7MX9_to_7JTL" created.</code></pre>
+<p>To visualise the result, you will need to re-centre on the molecule, use the Action-Orient or Action-Center options to bring the molecules back into the middle of the screen.</p>
 </section>
-<section id="publications" class="level2">
-<h2 class="anchored" data-anchor-id="publications">Publications</h2>
-<p>Click <a href="./all_publications.html">here to see a list of all my publications</a> or click on one of the images below. <!-- Generates a row of four images --> <!-- could also include "enzymes" --></p>
-<div style="display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
-<p><a href="./protein_science_publications.html" title="protein illustration"> <img src="images/proteins.png" style="width: 23%;"> </a></p>
-<p><a href="./pathogen_publications.html" title="Image of S. aureus and a virus"> <img src="images/pathogens.png" style="width: 23%;"> </a></p>
-<p><a href="./pectin_publications.html" title="illustration of carbohydrate"> <img src="images/pectin.png" style="width: 23%;"> </a></p>
-<p><a href="./thermodynamics_publications.html" title="Thermodynamics"> <img src="images/thermodynamics.png" style="width: 23%;"> </a></p>
-</div>
+<section id="calculating-rmsd-using-pymol-two-chains-within-the-same-pdb-file" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-rmsd-using-pymol-two-chains-within-the-same-pdb-file">Calculating RMSD using PyMol (two chains within the same PDB file)</h2>
+<p>If you have a single PDB file with two chains, the above procedure will not work. You need to define the two objects that need to be superimposed. We will use the dimer in 7JTL as an example. Notice that there are two polypeptide chains. Right-click on each to see the Chain ID. In this case, the chains are A and B.</p>
+<p>Use the commands below to create separate objects for each chain, then superimpose them based on the CA atoms. These commands need to be entered into the command prompt in PyMOL.</p>
+<pre><code>create chainA, 7JTL and chain A 
+create chainB, 7JTL and chain B 
+align chainA and name CA, chainB and name CA</code></pre>
+<p>The output will appear as below:</p>
+<pre><code>PyMOL&gt;align chainA and name CA, chainB and name CA
+ Match: read scoring matrix.
+ Match: assigning 107 x 107 pairwise scores.
+ MatchAlign: aligning residues (107 vs 107)...
+ MatchAlign: score 585.000
+ ExecutiveAlign: 107 atoms aligned.
+ ExecutiveRMS: 5 atoms rejected during cycle 1 (RMSD=2.43).
+ ExecutiveRMS: 5 atoms rejected during cycle 2 (RMSD=0.99).
+ ExecutiveRMS: 5 atoms rejected during cycle 3 (RMSD=0.45).
+ ExecutiveRMS: 3 atoms rejected during cycle 4 (RMSD=0.29).
+ Executive: RMSD =    0.260 (82 to 82 atoms)</code></pre>
+<p>Now try ‘super’ instead of ‘align’. Notice that the RMSD is different, and fewer atoms were chosen.</p>
+<pre><code> PyMOL&gt;super chainA and name CA, chainB and name CA
+ MatchAlign: aligning residues (107 vs 107)...
+ MatchAlign: score 434.622
+ ExecutiveAlign: 97 atoms aligned.
+ ExecutiveRMS: 6 atoms rejected during cycle 1 (RMSD=2.79).
+ ExecutiveRMS: 4 atoms rejected during cycle 2 (RMSD=1.22).
+ ExecutiveRMS: 4 atoms rejected during cycle 3 (RMSD=0.50).
+ ExecutiveRMS: 4 atoms rejected during cycle 4 (RMSD=0.30).
+ ExecutiveRMS: 1 atoms rejected during cycle 5 (RMSD=0.26).
+ Executive: RMSD =    0.252 (78 to 78 atoms)</code></pre>
+<p>‘align’ performs a sequence-dependent structural alignment. This should only be used when the proteins are homologous.</p>
+<p>‘super’ performs a sequence-independent, structure-based alignment. This is more tolerant of insertions/deletions and structural differences. Best when proteins are similar in fold but not necessarily in sequence</p>
+</section>
+<section id="tm-score-zhang-lab" class="level2">
+<h2 class="anchored" data-anchor-id="tm-score-zhang-lab">TM-Score (Zhang Lab)</h2>
+<p>the TM-score is another method to calculate structural similarity. It overcomes some of the limitations of the RMSD score. You can calculate a TM score and read about the advantages of this method here <a href="https://aideepmed.com/TM-score/">https://aideepmed.com/TM-score/</a></p>
+</section>
+<section id="the-global-distance-test-gdt" class="level2">
+<h2 class="anchored" data-anchor-id="the-global-distance-test-gdt">The global distance test (GDT)</h2>
+<p>Coming soon…</p>
 
 
 </section>

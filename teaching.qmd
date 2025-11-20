@@ -1,0 +1,9 @@
+---
+title: "Teaching"
+---
+
+## Problem Solving
+
+Each year, I incorporate a thought experiment into the first-year induction programme where students design an experiment to detect life in water from Europa.
+
+![Me giving a lecture on astrobiology (photo by Yun Wah Lam)](images/giving_a_lecture.png){width="80%" fig-align="left"}

@@ -312,6 +312,41 @@
     "href": "research.html#current-projects-and-tutorials",
     "title": "Research",
     "section": "Current Projects and Tutorials",
-    "text": "Current Projects and Tutorials\nSince 2008, I have had the pleasure of supervising numerous undergraduate and postgraduate student projects. I have a range of current projects in protein science, mainly focused on using computational techniques to aid our understanding of experimental results.\n\nTutorial to estimate the binding affinity of a tandem beta-zipper using PRODIGY\nUmbrella Sampling"
+    "text": "Current Projects and Tutorials\nSince 2008, I have had the pleasure of supervising numerous undergraduate and postgraduate student projects. I have a range of current projects in protein science, mainly focused on using computational techniques to aid our understanding of experimental results.\n\nTutorial to calculate RMSD, TM-Score and GDT\nTutorial to estimate the binding affinity of a tandem beta-zipper using PRODIGY\nUmbrella Sampling"
+  },
+  {
+    "objectID": "homodimers.html",
+    "href": "homodimers.html",
+    "title": "Homodimers",
+    "section": "",
+    "text": "A short guide on how to calculate structural similarity between two polypeptide chains."
+  },
+  {
+    "objectID": "homodimers.html#calculating-rmsd-using-pymol-two-molecules",
+    "href": "homodimers.html#calculating-rmsd-using-pymol-two-molecules",
+    "title": "Homodimers",
+    "section": "Calculating RMSD using PyMol (two molecules)",
+    "text": "Calculating RMSD using PyMol (two molecules)\nIf you have two separate PDB files they will appear as two lines with separate controls. In the image below I have loaded in structures for 7JTL and 7MX9. One way to superimpose them is to click on the A for ‘Action’, then select ‘align’, ‘to molecule’, then select the template, in this case 7JTL.  The output in the console will report the RMSD and the number of C-alpha atoms (CA).\n Executive: RMSD =    0.410 (71 to 71 atoms)\n Executive: object \"aln_7MX9_to_7JTL\" created.\nTo visualise the result, you will need to re-centre on the molecule, use the Action-Orient or Action-Center options to bring the molecules back into the middle of the screen."
+  },
+  {
+    "objectID": "homodimers.html#calculating-rmsd-using-pymol-two-chains-within-the-same-pdb-file",
+    "href": "homodimers.html#calculating-rmsd-using-pymol-two-chains-within-the-same-pdb-file",
+    "title": "Homodimers",
+    "section": "Calculating RMSD using PyMol (two chains within the same PDB file)",
+    "text": "Calculating RMSD using PyMol (two chains within the same PDB file)\nIf you have a single PDB file with two chains, the above procedure will not work. You need to define the two objects that need to be superimposed. We will use the dimer in 7JTL as an example. Notice that there are two polypeptide chains. Right-click on each to see the Chain ID. In this case, the chains are A and B.\nUse the commands below to create separate objects for each chain, then superimpose them based on the CA atoms. These commands need to be entered into the command prompt in PyMOL.\ncreate chainA, 7JTL and chain A \ncreate chainB, 7JTL and chain B \nalign chainA and name CA, chainB and name CA\nThe output will appear as below:\nPyMOL&gt;align chainA and name CA, chainB and name CA\n Match: read scoring matrix.\n Match: assigning 107 x 107 pairwise scores.\n MatchAlign: aligning residues (107 vs 107)...\n MatchAlign: score 585.000\n ExecutiveAlign: 107 atoms aligned.\n ExecutiveRMS: 5 atoms rejected during cycle 1 (RMSD=2.43).\n ExecutiveRMS: 5 atoms rejected during cycle 2 (RMSD=0.99).\n ExecutiveRMS: 5 atoms rejected during cycle 3 (RMSD=0.45).\n ExecutiveRMS: 3 atoms rejected during cycle 4 (RMSD=0.29).\n Executive: RMSD =    0.260 (82 to 82 atoms)\nNow try ‘super’ instead of ‘align’. Notice that the RMSD is different, and fewer atoms were chosen.\n PyMOL&gt;super chainA and name CA, chainB and name CA\n MatchAlign: aligning residues (107 vs 107)...\n MatchAlign: score 434.622\n ExecutiveAlign: 97 atoms aligned.\n ExecutiveRMS: 6 atoms rejected during cycle 1 (RMSD=2.79).\n ExecutiveRMS: 4 atoms rejected during cycle 2 (RMSD=1.22).\n ExecutiveRMS: 4 atoms rejected during cycle 3 (RMSD=0.50).\n ExecutiveRMS: 4 atoms rejected during cycle 4 (RMSD=0.30).\n ExecutiveRMS: 1 atoms rejected during cycle 5 (RMSD=0.26).\n Executive: RMSD =    0.252 (78 to 78 atoms)\n‘align’ performs a sequence-dependent structural alignment. This should only be used when the proteins are homologous.\n‘super’ performs a sequence-independent, structure-based alignment. This is more tolerant of insertions/deletions and structural differences. Best when proteins are similar in fold but not necessarily in sequence"
+  },
+  {
+    "objectID": "homodimers.html#tm-score-zhang-lab",
+    "href": "homodimers.html#tm-score-zhang-lab",
+    "title": "Homodimers",
+    "section": "TM-Score (Zhang Lab)",
+    "text": "TM-Score (Zhang Lab)\nthe TM-score is another method to calculate structural similarity. It overcomes some of the limitations of the RMSD score. You can calculate a TM score and read about the advantages of this method here https://aideepmed.com/TM-score/"
+  },
+  {
+    "objectID": "homodimers.html#the-global-distance-test-gdt",
+    "href": "homodimers.html#the-global-distance-test-gdt",
+    "title": "Homodimers",
+    "section": "The global distance test (GDT)",
+    "text": "The global distance test (GDT)\nComing soon…"
   }
 ]
