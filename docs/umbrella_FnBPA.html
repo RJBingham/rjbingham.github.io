@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Umbrella sampling FnBPA1-2F13F1 – RJBingham</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7baaf987bdc31585216d969921a59bec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">RJBingham</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#download-the-input-files-and-charmm36-forcefield" id="toc-download-the-input-files-and-charmm36-forcefield" class="nav-link active" data-scroll-target="#download-the-input-files-and-charmm36-forcefield">Download the input files and Charmm36 forcefield</a></li>
+  <li><a href="#download-starting-coordinates" id="toc-download-starting-coordinates" class="nav-link" data-scroll-target="#download-starting-coordinates">Download starting coordinates</a></li>
+  <li><a href="#build-the-system" id="toc-build-the-system" class="nav-link" data-scroll-target="#build-the-system">Build the System</a>
+  <ul class="collapse">
+  <li><a href="#create-a-larger-box-of-13-nm." id="toc-create-a-larger-box-of-13-nm." class="nav-link" data-scroll-target="#create-a-larger-box-of-13-nm.">Create a larger box of 13 nm.</a></li>
+  <li><a href="#solvate-in-0.14-m-nacl-and-neutralise" id="toc-solvate-in-0.14-m-nacl-and-neutralise" class="nav-link" data-scroll-target="#solvate-in-0.14-m-nacl-and-neutralise">Solvate in 0.14 M NaCl and neutralise</a></li>
+  <li><a href="#minimise-and-equilibrate" id="toc-minimise-and-equilibrate" class="nav-link" data-scroll-target="#minimise-and-equilibrate">Minimise and Equilibrate</a></li>
+  <li><a href="#check-equilibration-of-temperature-and-pressure" id="toc-check-equilibration-of-temperature-and-pressure" class="nav-link" data-scroll-target="#check-equilibration-of-temperature-and-pressure">Check equilibration of temperature and pressure</a></li>
+  <li><a href="#ns-of-unrestrained-equilibration-46-minutes" id="toc-ns-of-unrestrained-equilibration-46-minutes" class="nav-link" data-scroll-target="#ns-of-unrestrained-equilibration-46-minutes">1 ns of unrestrained equilibration (46 minutes)</a></li>
+  </ul></li>
+  <li><a href="#define-the-pull-groups" id="toc-define-the-pull-groups" class="nav-link" data-scroll-target="#define-the-pull-groups">Define the pull groups</a>
+  <ul class="collapse">
+  <li><a href="#check-the-distances-in-the-1-ns-equilibration" id="toc-check-the-distances-in-the-1-ns-equilibration" class="nav-link" data-scroll-target="#check-the-distances-in-the-1-ns-equilibration">Check the distances in the 1 ns equilibration</a></li>
+  <li><a href="#add-restraints-to-maintain-the-structure-of-fn" id="toc-add-restraints-to-maintain-the-structure-of-fn" class="nav-link" data-scroll-target="#add-restraints-to-maintain-the-structure-of-fn">Add restraints to maintain the structure of Fn</a></li>
+  </ul></li>
+  <li><a href="#edit-the-pull.mdp-to-specify-the-pull-groups" id="toc-edit-the-pull.mdp-to-specify-the-pull-groups" class="nav-link" data-scroll-target="#edit-the-pull.mdp-to-specify-the-pull-groups">Edit the pull.mdp to specify the pull groups</a></li>
+  <li><a href="#set-the-pull-distance" id="toc-set-the-pull-distance" class="nav-link" data-scroll-target="#set-the-pull-distance">Set the pull distance</a>
+  <ul class="collapse">
+  <li><a href="#generate-the-configurations-pulling" id="toc-generate-the-configurations-pulling" class="nav-link" data-scroll-target="#generate-the-configurations-pulling">Generate the configurations (pulling)</a></li>
+  <li><a href="#measure-the-distances-between-the-two-cα-atoms-over-time" id="toc-measure-the-distances-between-the-two-cα-atoms-over-time" class="nav-link" data-scroll-target="#measure-the-distances-between-the-two-cα-atoms-over-time">Measure the distances between the two Cα atoms over time</a></li>
+  </ul></li>
+  <li><a href="#get-the-individual-gro-files-for-umbrella-sampling" id="toc-get-the-individual-gro-files-for-umbrella-sampling" class="nav-link" data-scroll-target="#get-the-individual-gro-files-for-umbrella-sampling">Get the individual gro files for umbrella sampling</a></li>
+  <li><a href="#visual-check-of-the-starting-positions-in-pymol" id="toc-visual-check-of-the-starting-positions-in-pymol" class="nav-link" data-scroll-target="#visual-check-of-the-starting-positions-in-pymol">Visual check of the starting positions in pymol</a></li>
+  <li><a href="#run-the-umbrella-sampling" id="toc-run-the-umbrella-sampling" class="nav-link" data-scroll-target="#run-the-umbrella-sampling">Run the umbrella sampling</a>
+  <ul class="collapse">
+  <li><a href="#write-the-dat-files-then-run-wham" id="toc-write-the-dat-files-then-run-wham" class="nav-link" data-scroll-target="#write-the-dat-files-then-run-wham">Write the dat files, then run WHAM</a></li>
+  <li><a href="#view-the-graphs" id="toc-view-the-graphs" class="nav-link" data-scroll-target="#view-the-graphs">View the graphs</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Umbrella sampling FnBPA1-2F13F1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>this tutorial is incomplete, edits will be made…</p>
+<p>The aim of this guide is to use umbrella sampling to calculate the dissociation constant (Kd) for the interaction between 2F13F1 and FnBPA-1.</p>
+<p>The methods are based on Exercise 3 in the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11457149/">tutorial guide by Justin Lemkul</a>.</p>
+<section id="download-the-input-files-and-charmm36-forcefield" class="level2">
+<h2 class="anchored" data-anchor-id="download-the-input-files-and-charmm36-forcefield">Download the input files and Charmm36 forcefield</h2>
+<p>Create a new folder, then run the commands below to download two folders “gmx_tutorials_jpcb” and “toppar_c36_releases”.</p>
+<pre><code>git clone https://github.com/Lemkul-Lab/gmx_tutorials_jpcb.git
+git clone https://github.com/Lemkul-Lab/toppar_c36_releases.git</code></pre>
+<p>Go into the gmx_tutorials_jpcb/inputs, and run this command to make a copy of the ‘03_chignolin’ folder and rename it to ‘04_FnBPA1’. This will be the working directory.</p>
+<pre><code>cp -r 03_chignolin/ 04_FnBPA1</code></pre>
+<p>Move the charmm36-jul2024.ff folder to the 04_FnBPA1 folder. This forcefield then appears at number 1 on the list when you run pdb2gmx below.</p>
+</section>
+<section id="download-starting-coordinates" class="level2">
+<h2 class="anchored" data-anchor-id="download-starting-coordinates">Download starting coordinates</h2>
+<p>Coordinates for the interaction between FnBPA1 and 2F1-3F1 are available here <a href="https://www.rcsb.org/structure/2RKZ">2RKZ</a>. There are five copies in the asymmetric unit. We will use Chain A (fibronectin) and M (FnBPA-1). The fibronectin molecule is complete, with no missing atoms. There are some missing atoms on the bacterial peptide. Open the structure in PyMOL and find residue Lys537 on Chain M. You should see that this resembles alanine. The side-chain of the Lys was not modelled because of disorder. It is necessary to rebuild these missing atoms. Click on the ‘Wizard’ menu to open the ‘Mutagenesis’ function. Pick the residue (Lys537 on Chain M), then on the menu at the bottom-right select ‘No mutation’, to bring up a list of amino acids. Choose ‘Lys’, then the words should change to ‘Mutate to Lys’, click ‘Apply’, then ‘Done’. Visually check that you have mutated this residue to lysine, then save the molecule in PDB format with the filename ‘2RKZ_model1.pdb’. Also, notice that the N-terminus of chain M is acetylated.</p>
+<p>Open ‘2RKZ_model1.pdb’ in a text editor, delete everything except chains A and M. Save the file as ‘2RKZ_model2.pdb’</p>
+<p>Note the FnBPA1 described in <a href="https://www.nature.com/articles/nature01589">Schwarz-Linek (2003)</a> is residues 560–577 LTG to YDS, this PDB file has a few additional amino acids.</p>
+</section>
+<section id="build-the-system" class="level1">
+<h1>Build the System</h1>
+<p>In the 04_FnBPA folder, run pdb2gmx using the command below. This will add hydrogens and generate coordinate and topology files in GROMACS format. The option -ter allows us to manually specify the terminii on each polypeptide chain. This is required for the acetylated N-terminus on Chain M.</p>
+<pre><code>gmx pdb2gmx -f 2RKZ_model2.pdb -ignh -ter</code></pre>
+<p>The program will look for forcefields in the current working directory that end with ‘.ff’. It should find the charmm36 forcefield from above, and this should be number 1 on the list.</p>
+<p>Select 1 for charmm, the select 1 for the TIP3P water model.</p>
+<p>Then we need to specify the start/end groups for each polypeptide chain.</p>
+<p>Select start terminus type for GLU-63 0: NH3+</p>
+<p>Select end terminus type for ILE-151 0: COO-</p>
+<p>Select start terminus type for ACE-528 8: None</p>
+<p>Select end terminus type for GLU-546 0: COO-</p>
+<p>The output is “conf.gro”. You can check this in PyMOL. Check that the chemistry on the chain terminii is correct.</p>
+<section id="create-a-larger-box-of-13-nm." class="level2">
+<h2 class="anchored" data-anchor-id="create-a-larger-box-of-13-nm.">Create a larger box of 13 nm.</h2>
+<p>At the maximum extent, the distance between the two pull groups must be less than half the box size. Aiming for a 6 nm (60 Angstroms) pull, a 13 nm box size gives us a safety cushion.</p>
+<p>This also centres the molecule with -c flag.</p>
+<pre><code>gmx editconf -f conf.gro -o box.gro -bt cubic -box 13 -c</code></pre>
+<p>The output should be something like below</p>
+<pre><code>No velocities found
+    system size :  3.543  4.035  5.341 (nm)
+    diameter    :  6.165               (nm)
+    center      :  0.368 -1.763  0.359 (nm)
+    box vectors :  5.959 10.972  7.147 (nm)
+    box angles  :  90.00  96.94  90.00 (degrees)
+    box volume  : 463.86               (nm^3)
+    shift       :  6.132  8.263  6.141 (nm)
+new center      :  6.500  6.500  6.500 (nm)
+new box vectors : 13.000 13.000 13.000 (nm)
+new box angles  :  90.00  90.00  90.00 (degrees)
+new box volume  :2197.00               (nm^3)</code></pre>
+</section>
+<section id="solvate-in-0.14-m-nacl-and-neutralise" class="level2">
+<h2 class="anchored" data-anchor-id="solvate-in-0.14-m-nacl-and-neutralise">Solvate in 0.14 M NaCl and neutralise</h2>
+<p>The ITC was conducted at physiological salt strength, pH7.4, 25 °C. The files in this tutorial are already at 298 K (25 °C), so no changes are required here. The protonation is consistent with neutral pH. We can specify a NaCl concentration of 0.14 M with ‘-conc 0.14’ as below:</p>
+<pre><code>gmx solvate -cp box.gro -cs spc216.gro -p topol.top -o solv.gro
+gmx grompp -f inputs/ions.mdp -c solv.gro -p topol.top -o ions.tpr
+gmx genion -s ions.tpr -o solv_ions.gro -p topol.top -pname NA -nname CL -neutral -conc 0.14</code></pre>
+<p>Choose 13 to replace the waters with NaCl</p>
+</section>
+<section id="minimise-and-equilibrate" class="level2">
+<h2 class="anchored" data-anchor-id="minimise-and-equilibrate">Minimise and Equilibrate</h2>
+<pre><code>#minimise
+gmx grompp -f inputs/minim.mdp -c solv_ions.gro -p topol.top -o em.tpr
+gmx mdrun -nb gpu -deffnm em -v
+
+#nvt equilibration (~3 minutes)
+#this is only 100ps of equilibration, longer would be better.
+gmx grompp -f inputs/nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx mdrun -nb gpu -deffnm nvt -v
+
+
+#npt equilibration (~17 minutes)
+gmx grompp -f inputs/npt.mdp -c nvt.gro -t nvt.cpt -r nvt.gro -p topol.top -o npt.tpr
+gmx mdrun -nb gpu -deffnm npt -v</code></pre>
+</section>
+<section id="check-equilibration-of-temperature-and-pressure" class="level2">
+<h2 class="anchored" data-anchor-id="check-equilibration-of-temperature-and-pressure">Check equilibration of temperature and pressure</h2>
+<p>gmx energy -f npt.edr -o npt_pressure.xvg xmgrace npt_pressure.xvg gmx energy -f npt.edr -o npt_temperature.xvg xmgrace npt_temperature.xvg</p>
+</section>
+<section id="ns-of-unrestrained-equilibration-46-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="ns-of-unrestrained-equilibration-46-minutes">1 ns of unrestrained equilibration (46 minutes)</h2>
+<p>Navigate into the inputs folder and open md.mdp. Change the number of steps as below. Then save the file with a new filename ‘md_1ns.mdp’</p>
+<pre><code>nsteps = 500000 ;1 ns</code></pre>
+<p>Below -f the mdp instruction file -c the input file -t Full precision trajectory input file (binary snapshot of the integrator state with positions, velocities, box, RNG/integrator state, elapsed time/step) -p the topology input file -o output trr file</p>
+<pre><code>gmx grompp -f inputs/md_1ns.mdp -c npt.gro -t npt.cpt -p topol.top -o md_1ns.tpr
+gmx mdrun -v -deffnm md_1ns</code></pre>
+</section>
+</section>
+<section id="define-the-pull-groups" class="level1">
+<h1>Define the pull groups</h1>
+<p>We will pull the two molecules apart using a pair of atoms that are close together, therefore maximizing the pull distance. (EDIT - change this to choose a more central atom in the bacterial peptide)</p>
+<pre><code>gmx make_ndx -f md_1ns.gro -o index.ndx 
+r 145 &amp; a CA
+name 17 Glu145_CA
+r 534 &amp; a CA
+name 18 Gln534_CA</code></pre>
+<p>This creates index.ndx</p>
+<p>We need to calculate the vector between these. Gln534_CA - Glu145_CA</p>
+<p>In the md_1ns.gro file, find the coordinates of these two CA atoms. 534GLN CA 1424 7.539 5.967 4.696 145GLU CA 1230 7.261 5.654 4.777</p>
+<p>Perform a simple subtraction to find the vector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>GLN534 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">7.539</span>,   <span class="fl">5.967</span>,   <span class="fl">4.696</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>GLU145 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">7.261</span>,   <span class="fl">5.654</span>,   <span class="fl">4.777</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>GLN534 <span class="sc">-</span> GLU145</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  0.278  0.313 -0.081</code></pre>
+</div>
+</div>
+<p>0.278 0.313 -0.081</p>
+<section id="check-the-distances-in-the-1-ns-equilibration" class="level2">
+<h2 class="anchored" data-anchor-id="check-the-distances-in-the-1-ns-equilibration">Check the distances in the 1 ns equilibration</h2>
+<p>gmx distance -s md_1ns.tpr -f md_1ns.xtc -n index.ndx -select ‘com of group 17 plus com of group 18’ -oall -oh disthist.xvg -oxyz distxyz.xvg</p>
+<p>The starting distance between the two CA atoms is 0.41 nm. The average distance here is 0.429 nm. There are no large deviations.</p>
+</section>
+<section id="add-restraints-to-maintain-the-structure-of-fn" class="level2">
+<h2 class="anchored" data-anchor-id="add-restraints-to-maintain-the-structure-of-fn">Add restraints to maintain the structure of Fn</h2>
+<p>It is necessary to restrain the Fn protein to prevent rotation. In addition, the force generated from the pull may disrupt the structure of Fn.</p>
+<p>Run the command below to see the itp files</p>
+<pre><code>ls -ltr *.itp</code></pre>
+<p>We need to restrain Chain A (fibronectin), defined by “topol_Protein_chain_A.itp”. Scroll to the end of this file and look for these lines:</p>
+<pre><code>; Include Position restraint file
+#ifdef POSRES
+#include "posre_Protein_chain_A.itp"
+#endif</code></pre>
+<p>Change the lines to this below:</p>
+<pre><code>; Include Position restraint file
+#ifdef POSRES_Fn
+#include "posre_Protein_chain_A.itp"
+#endif</code></pre>
+<p>Then add the -DPOSRES_Fn to the pull.mdp file. It is also necessary to adjust the scaling (as adding restraints with a variable box size may introduce artefacts).</p>
+<pre><code>define    =  -DPOSRES_Fn ;include position restraint on fibronectin
+refcoord-scaling = all ; scale each atom's reference coordinates with the pressure-scaling matrix</code></pre>
+</section>
+</section>
+<section id="edit-the-pull.mdp-to-specify-the-pull-groups" class="level1">
+<h1>Edit the pull.mdp to specify the pull groups</h1>
+<p>We need to make some further changes to the pull.mdp file, specifying the two atoms that will be pulled (Glu145_CA and Gln534_CA) and the vector to define the direction. Edit the file so that it matches this below.</p>
+<pre><code>; Pull options 
+pull                    = yes
+pull-ngroups            = 2          ; total number of groups 
+pull-ncoords            = 1          ; 
+pull-group1-name        = Glu145_CA  ; Fn
+pull-group2-name        = Gln534_CA  ; Bacterial peptide
+pull-coord1-type        = umbrella
+pull-coord1-geometry    = direction
+pull-coord1-vec         =  0.278  0.313 -0.081
+pull-coord1-dim         = Y Y Y
+pull-coord1-groups      = 1 2
+pull-coord1-start       = yes
+pull-coord1-rate        = 0.005
+pull-coord1-k           = 2000</code></pre>
+</section>
+<section id="set-the-pull-distance" class="level1">
+<h1>Set the pull distance</h1>
+<p>The pull.mdp has a pull rate of 0.005 nm/ps, which currently over 500ps will extend the vector by 2.5 nm. We need to increase that.</p>
+<p>At the maximum extent, the distance between the two pull groups must be less than half the box size (6.5 nm). If you exceed half the box length, it will result in a fatal error. If this happens reduce the pull distance accordingly. We need a margin of error to prevent interactions with neighboring molecules in adjacent cells.</p>
+<p>We will use a 5.3 nm pull.</p>
+<p>starting distance + pull distance = maximum extent 0.426 + 5.3 nm = 5.726 nm</p>
+<p>As the pull rate is 0.005 nm/ps, we need to change the time of the simulation to 5.3/0.005 = 1060 ps. We do that by increasing the number of steps.</p>
+<p>1060 ps is 1,060,000 fs</p>
+<p>Each step is 2 fs, so 1,060,000/2 = 530000 steps</p>
+<p>change this line in pull.mdp</p>
+<pre><code>nsteps                  = 530000    ; 1060 ps</code></pre>
+<section id="generate-the-configurations-pulling" class="level2">
+<h2 class="anchored" data-anchor-id="generate-the-configurations-pulling">Generate the configurations (pulling)</h2>
+<p>This takes ~36 minutes</p>
+<pre><code>gmx grompp -f inputs/pull.mdp -c md_1ns.gro -r md_1ns.gro -t md_1ns.cpt -n index.ndx -p topol.top -o pull.tpr
+gmx mdrun -v -nb gpu -deffnm pull</code></pre>
+<p>When you run the first command above, you will see these pull groups. Check the distances are as expected.</p>
+<p>Pull group natoms pbc atom distance at start reference at t=0 1 1 0 2 1 0 0.426 nm 0.426 nm</p>
+<p>Visualise this in PyMOL. Check it all looks sensible.</p>
+</section>
+<section id="measure-the-distances-between-the-two-cα-atoms-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="measure-the-distances-between-the-two-cα-atoms-over-time">Measure the distances between the two Cα atoms over time</h2>
+<p>The command below also generates dist.xvg (needed later)</p>
+<pre><code>gmx distance -s pull.tpr -f pull.xtc -n index.ndx -select 'com of group 17 plus com of group 18' -oall -oh disthist.xvg -oxyz distxyz.xvg
+
+#graph the distance over time
+xmgrace dist.xvg
+xmgrace -nxy dist.xvg -hdevice PNG -hardcopy -printfile pull_distance.png -noask
+
+#graph the force over time
+xmgrace pull_pullf.xvg
+xmgrace -nxy pull_pullf.xvg -hdevice PNG -hardcopy -printfile pull_force.png -noask</code></pre>
+</section>
+</section>
+<section id="get-the-individual-gro-files-for-umbrella-sampling" class="level1">
+<h1>Get the individual gro files for umbrella sampling</h1>
+<p>First, edit the find_windows.py script to use a starting distance of 0.4 nm, ending distance of 6 nm in 0.2 nm increments. (to capture the distance of 6 nm, you may need to enter 6.2 as the maximum)</p>
+<p>EDIT - this may need to be 0.1 nm</p>
+<pre><code>for d in numpy.arange(0.4, 6.2, 0.2):</code></pre>
+<p>Then run the script with this command</p>
+<pre><code>python3 find_windows.py</code></pre>
+<p>This python script reads the dist.xvg file from the previous step and extracts the .gro file that is closest to each target value. For example:</p>
+<pre><code>target value: 3.6 best value: 3.608 at time: 663.0</code></pre>
+<p>Check that the first and last ones are as expected. If you are missing the last one at the greatest pull distance then increase the value above and repeat it.</p>
+</section>
+<section id="visual-check-of-the-starting-positions-in-pymol" class="level1">
+<h1>Visual check of the starting positions in pymol</h1>
+<p>Check the extent of the separation. Check at the maximum pull distance there are no interactions with neighboring molecules. On the image below, you can see the orientation at the maximum distance (6 nm). You can see that the pull vector was slightly to the left. Ideally, that vector should have been perpendicular to the axis of the 2F1-3F1 domains, this would then maximise the distance between any interacting atoms. The C-terminus of the FnBPA peptide remains relatively close to the fibnonectin, but at 0.16 nm, this should not be a problem.</p>
+<p><img src="images/FnBPA_60A_pull.png" class="img-fluid"></p>
+</section>
+<section id="run-the-umbrella-sampling" class="level1">
+<h1>Run the umbrella sampling</h1>
+<p>Edit the template to define the pull groups, save it as ‘us.mdp’</p>
+<pre><code>gedit ./inputs/us.tmpl</code></pre>
+<p>Check the lines below</p>
+<pre><code>nsteps                 =  5000000 ; 10 ns 
+pull-group1-name        = Glu145_CA
+pull-group2-name        = Gln534_CA
+pull-coord1-start       = yes ; automatically set the starting distance for the bias potential
+;pull-coord1-init        = XX ; comment out this line, or delete it.</code></pre>
+<p>Edit the ‘run_umbrella_sampling.sh’ script to stop it generating a new .mdp file for each distance. We will use the ‘us.mdp’ for all distances. (comment out lines 17-19, then specify us.mdp on line 22).</p>
+<p>Edit the line at the top to define the number of runs for (( i=0; i&lt;=24; i++ ))</p>
+<p>The run_umbrella_sampling.sh script will generate the input files, then run npt/nvt equilibration with position restraints on the protein, then a 10 ns unrestrained md simulation in each window.</p>
+<p>Then run the script</p>
+<pre><code>bash run_umbrella_sampling.sh</code></pre>
+<p>An average of 8.7 hours per window.</p>
+<section id="write-the-dat-files-then-run-wham" class="level2">
+<h2 class="anchored" data-anchor-id="write-the-dat-files-then-run-wham">Write the dat files, then run WHAM</h2>
+<p>First, edit line 7 in the ‘write_wham_files.py’ script to specify the number of files, in this case 28.</p>
+<pre><code>for i in range(0,28):</code></pre>
+<p>Then run the script to generate the two .dat files.</p>
+<pre><code>python3 write_wham_files.py</code></pre>
+<p>Then run wham</p>
+<pre><code>gmx wham -it tpr-files.dat -if pullf-files.dat -bsprof -bsres -nBootstrap 200</code></pre>
+<p>The output includes some warnings.</p>
+<pre><code>Warning, poor sampling bin 197 (z=3.36765). Check your histograms!
+Warning, poor sampling bin 198 (z=3.38286). Check your histograms!
+Warning, poor sampling bin 199 (z=3.39806). Check your histograms!
+Initialized rapid wham stuff (contrib tolerance 3.57143e-08)
+Evaluating only 1541 of 5600 expressions.
+</code></pre>
+</section>
+<section id="view-the-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="view-the-graphs">View the graphs</h2>
+<pre><code>xmgrace -nxy histo.xvg
+xmgrace  profile.xvg 
+xmgrace  bsResult.xvg </code></pre>
+<p>plot the bootstrap graph to estimage the change in Gibbs free energy.</p>
+<p>To calculate the Gibbs free energy change (ΔG) from a dissociation constant (Kd), use: <span class="math display">\[
+\Delta G = RT \ln(K_d)
+\]</span> Where:<br> R is the gas constant (8.314 J⋅K⁻¹⋅mol⁻¹)<br> T is the temperature (298 K)<br> <span class="math inline">\(K_d\)</span> is the dissociation constant in moles per litre (<span class="math inline">\(0.5\,\mu\mathrm{M}\)</span> is 5×10−7 M)<br></p>
+<p>Now compare the Gibbs free energy from ITC to the one calculated above.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

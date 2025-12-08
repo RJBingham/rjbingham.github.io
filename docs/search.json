@@ -39,7 +39,7 @@
     "href": "tandem_beta_prodigy.html#calculating-binding-affinity-using-prodigy",
     "title": "Estimating the binding affinity of the interaction between tandem beta-zippers and fibronectin",
     "section": "Calculating binding affinity using PRODIGY",
-    "text": "Calculating binding affinity using PRODIGY\nThe PRODIGY webserver accepts files in .pdb format. However, the output from the Alphafold server is a .cif coordinate file which has a slightly different format. One way to convert .cif to .pdb is to use PyMOL.\n\nAs above, download the results from Alphafold and extract the zip file. You should see 5 models with the .cif extension\nOpen one of the files in PyMOL.\nClick on File -&gt; Export Molecule\nOn the Selection, use the dropdown menu to choose the correct model\nClick Save\nAt the bottom-right, there is a menu that allows you to change the format of the output. Choose ‘PDB’. (not PDBx/mmcif)\nType in a suitable name and click Save\n\nNow, submitting this to PRODIGY is straightforward. Simply upload the pdb coordinate file and fill out the boxes with appropriate values then click ‘Submit PRODIGY’. Interactor 1 is fibronectin, (A) and Interactor 2 is the bacterial peptide (B).\nWithin minutes, you see a result similar to below.\n\n\n\nPRODIGY output\n\n\nThe experimental Kd value for this interaction is 4.8 ±0.6 nM (Meenan et al., 2007). However, the value from PRODIDGY is only 0.0000039 nM. (PRODIGY reports a value in moles/L so mulitiply the value above by 10^9 to convert 3.9e-15 M to 3.9e-6 nM) Why is there such a large discrepancy? The value from PRODIGY is over 1 million times smaller than the experimentally measured value. To answer this, you need to consider the dynamics of this particular type of protein-protein interaction and the limitations of the PRODIGY method (see the PRODIGY publications). The bacterial peptide transitions from being disordered in the unbound state to an extended beta-strand in the bound state. Compare this scenario to the training set of protein-protein complexes used to develop PRODIGY."
+    "text": "Calculating binding affinity using PRODIGY\nThe PRODIGY webserver accepts files in .pdb format. However, the output from the Alphafold server is a .cif coordinate file which has a slightly different format. One way to convert .cif to .pdb is to use PyMOL.\n\nAs above, download the results from Alphafold and extract the zip file. You should see 5 models with the .cif extension\nOpen one of the files in PyMOL.\nClick on File -&gt; Export Molecule\nOn the Selection, use the dropdown menu to choose the correct model\nClick Save\nType in a suitable name (ending in .pdb) and click Save\n\nNow, submitting this to PRODIGY is straightforward. Simply upload the pdb coordinate file and fill out the boxes with appropriate values then click ‘Submit PRODIGY’. Interactor 1 is fibronectin, (A) and Interactor 2 is the bacterial peptide (B).\nWithin minutes, you see a result similar to below.\n\n\n\nPRODIGY output\n\n\nThe experimental Kd value for this interaction is 4.8 ±0.6 nM (Meenan et al., 2007). However, the value from PRODIDGY is only 0.0000039 nM. (PRODIGY reports a value in moles/L so mulitiply the value above by 10^9 to convert 3.9e-15 M to 3.9e-6 nM) Why is there such a large discrepancy? The value from PRODIGY is over 1 million times smaller than the experimentally measured value. To answer this, you need to consider the dynamics of this particular type of protein-protein interaction and the limitations of the PRODIGY method (see the PRODIGY publications). The bacterial peptide transitions from being disordered in the unbound state to an extended beta-strand in the bound state. Compare this scenario to the training set of protein-protein complexes used to develop PRODIGY."
   },
   {
     "objectID": "tandem_beta_prodigy.html#references",
@@ -298,21 +298,21 @@
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "Each year, I incorporate a thought experiment into the first-year induction programme where students design an experiment to detect life in water from Europa.\n\n\n\nMe giving a lecture on astrobiology (photo by Yun Wah Lam)"
+    "text": "Me giving a lecture on astrobiology (photo by Yun Wah Lam). Each year, I incorporate a thought experiment into the first-year induction programme where students design an experiment to detect life in water from Europa."
   },
   {
     "objectID": "teaching.html#problem-solving",
     "href": "teaching.html#problem-solving",
     "title": "Teaching",
     "section": "",
-    "text": "Each year, I incorporate a thought experiment into the first-year induction programme where students design an experiment to detect life in water from Europa.\n\n\n\nMe giving a lecture on astrobiology (photo by Yun Wah Lam)"
+    "text": "Me giving a lecture on astrobiology (photo by Yun Wah Lam). Each year, I incorporate a thought experiment into the first-year induction programme where students design an experiment to detect life in water from Europa."
   },
   {
     "objectID": "research.html#current-projects-and-tutorials",
     "href": "research.html#current-projects-and-tutorials",
     "title": "Research",
     "section": "Current Projects and Tutorials",
-    "text": "Current Projects and Tutorials\nSince 2008, I have had the pleasure of supervising numerous undergraduate and postgraduate student projects. I have a range of current projects in protein science, mainly focused on using computational techniques to aid our understanding of experimental results.\n\nTutorial to calculate RMSD, TM-Score and GDT\nTutorial to estimate the binding affinity of a tandem beta-zipper using PRODIGY\nUmbrella Sampling"
+    "text": "Current Projects and Tutorials\nSince 2008, I have had the pleasure of supervising numerous undergraduate and postgraduate student projects. I have a range of current projects in protein science, mainly focused on using computational techniques to aid our understanding of experimental results.\n\nTutorial to calculate RMSD, TM-Score and GDT\nTutorial to estimate the binding affinity of a tandem beta-zipper using PRODIGY\nUmbrella Sampling -SfbI-5 bound to 2F1-3F1\nUmbrella Sampling - FnBPA bound to 2F1-3F1"
   },
   {
     "objectID": "homodimers.html",
@@ -348,5 +348,208 @@
     "title": "Homodimers",
     "section": "The global distance test (GDT)",
     "text": "The global distance test (GDT)\nComing soon…"
+  },
+  {
+    "objectID": "umbrella_sfbI.html",
+    "href": "umbrella_sfbI.html",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "",
+    "text": "this tutorial is incomplete, edits will be made…\nThe aim of this guide is to use umbrella sampling to calculate the dissociation constant (Kd) for the interaction between 2F1-3F1 and a fragment of SfbI (SfbI-5 residues 574-591). The methods are based on Exercise 3 in the [tutorial guide by Justin Lemkul] (https://pmc.ncbi.nlm.nih.gov/articles/PMC11457149/). We will start by downloading these files."
+  },
+  {
+    "objectID": "umbrella_sfbI.html#download-the-input-files-and-charmm36-forcefield",
+    "href": "umbrella_sfbI.html#download-the-input-files-and-charmm36-forcefield",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Download the input files and Charmm36 forcefield",
+    "text": "Download the input files and Charmm36 forcefield\nCreate a new folder, then run the commands below to download two folders “gmx_tutorials_jpcb” and “toppar_c36_releases”.\ngit clone https://github.com/Lemkul-Lab/gmx_tutorials_jpcb.git\ngit clone https://github.com/Lemkul-Lab/toppar_c36_releases.git\nGo into the gmx_tutorials_jpcb/inputs, and run these commands below. The first command makes a copy of the ‘03_chignolin’ folder and renames it to ‘04_sfbi’. This will be the working directory. The second command goes up two levels, then copies the charmm36 forcefield to the working directory “04_sfbi”. This forcefield will then appear at number 1 on the list when you run pdb2gmx command.\ncp -r 03_chignolin 04_sfbi\ncp -r ../../toppar_c36_releases/gromacs/charmm36-jul2024.ff/ 04_sfbi/\nYou should now have these files and directories listed below. Check by running “ls -ltr”\n1uao_model1.pdb\nfind_windows.py\ninputs\nrun_umbrella_sampling.sh\nwrite_wham_files.py\ncharmm36-jul2024.ff\nThe fragment of SfbI that we will target is shown on Figure 3 in Schwarz-Linek et al., 2003. The amino acid sequence is shown below alongside the sequence of 2F1-3F1 from P02751.\n&gt;SfbI5(2F1-3F1 binding region 574-591)\nTGMSGFSETVTIVEDTRP\n&gt;2F1-3F1 (P02751 95-182)\nETCFDKYTGNTYRVGDTYERPKDSMIWDCTCIGAGRGRISCTIANRCHEGGQSYKIGDTWRRPHETGGYMLECVCLGNGKGEWTCKPI\nGenerate an Alphafold3 model of this complex as described previously. Save the structure in PDB format, then copy this file into the 04_sfbi folder."
+  },
+  {
+    "objectID": "umbrella_sfbI.html#solvate-in-low-ionic-strength-nacl-and-neutralise",
+    "href": "umbrella_sfbI.html#solvate-in-low-ionic-strength-nacl-and-neutralise",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Solvate in low ionic strength NaCl and neutralise",
+    "text": "Solvate in low ionic strength NaCl and neutralise\nITC for SfbI peptides binding to 2f1-3F1 was conducted at low ionic strength buffer (10 mM, see reference 17) pH7.4, 25 °C. The files in this tutorial are already at 298 K (25 °C), so no changes are required here. The protonation is consistent with neutral pH. We can specify a NaCl concentration of 0.01 M with ‘-conc 0.01’ as below:\ngmx solvate -cp conf.gro -cs spc216.gro -p topol.top -o solv.gro\ngmx grompp -f inputs/ions.mdp -c solv.gro -p topol.top -o ions.tpr\ngmx genion -s ions.tpr -o solv_ions.gro -p topol.top -pname NA -nname CL -neutral -conc 0.01\nChoose 13 to replace the waters with NaCl. Only one Na ion was added (necessary to neutralize the system)."
+  },
+  {
+    "objectID": "umbrella_sfbI.html#minimise-and-equilibrate",
+    "href": "umbrella_sfbI.html#minimise-and-equilibrate",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Minimise and Equilibrate",
+    "text": "Minimise and Equilibrate\n#minimise (less than a minute)\ngmx grompp -f inputs/minim.mdp -c solv_ions.gro -p topol.top -o em.tpr\ngmx mdrun -nb gpu -deffnm em -v\n\n#nvt equilibration (1 minute)\n#this is only 100ps of equilibration, longer would be better.\ngmx grompp -f inputs/nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr\ngmx mdrun -nb gpu -deffnm nvt -v\n\n\n#npt equilibration (~3 minutes)\ngmx grompp -f inputs/npt.mdp -c nvt.gro -t nvt.cpt -r nvt.gro -p topol.top -o npt.tpr\ngmx mdrun -nb gpu -deffnm npt -v"
+  },
+  {
+    "objectID": "umbrella_sfbI.html#check-equilibration-of-temperature-and-pressure",
+    "href": "umbrella_sfbI.html#check-equilibration-of-temperature-and-pressure",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Check equilibration of temperature and pressure",
+    "text": "Check equilibration of temperature and pressure\ngmx energy -f npt.edr -o npt_pressure.xvg xmgrace npt_pressure.xvg #fluctuations should be less than 200 bar. gmx energy -f npt.edr -o npt_temperature.xvg xmgrace npt_temperature.xvg"
+  },
+  {
+    "objectID": "umbrella_sfbI.html#ns-of-unrestrained-equilibration",
+    "href": "umbrella_sfbI.html#ns-of-unrestrained-equilibration",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "50 ns of unrestrained equilibration",
+    "text": "50 ns of unrestrained equilibration\nNavigate to the ‘inputs’ folder and open md.mdp. Notice that this will run 25000000 steps of 0.002 ps, totalling 50 ns. Do not change anything, all is good. Start the 50 ns of unrestrained MD using the commands below.\nThe flags below are: -f is the mdp instruction file -c is the input file -t is Full precision trajectory input file (binary snapshot of the integrator state with positions, velocities, box, RNG/integrator state, elapsed time/step) -p is the topology input file -o is output trr file\ngmx grompp -f inputs/md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_50ns.tpr\ngmx mdrun -v -deffnm md_50ns"
+  },
+  {
+    "objectID": "umbrella_sfbI.html#create-a-larger-box-of-13-nm.",
+    "href": "umbrella_sfbI.html#create-a-larger-box-of-13-nm.",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Create a larger box of 13 nm.",
+    "text": "Create a larger box of 13 nm.\nWe are going to pull the two molecules apart so we need a larger box. At the maximum extent, the distance between the two pull groups must be less than half the box size. Aiming for a 6 nm (60 Angstroms) pull, a 13 nm box size should be ok. The command below also centres the molecule with -c flag.\nThe first line below removes the water molecules and sodium ions from the previous file.\ngrep -v -E \"NA|SOL|HOH\"  md_50ns.gro &gt; md_50ns_nowat.gro\ngmx editconf -f md_50ns.gro -o newbox.gro -bt cubic -box 13 -c\nThe output should be something like below\nNo velocities found\n    system size :  3.543  4.035  5.341 (nm)\n    diameter    :  6.165               (nm)\n    center      :  0.368 -1.763  0.359 (nm)\n    box vectors :  5.959 10.972  7.147 (nm)\n    box angles  :  90.00  96.94  90.00 (degrees)\n    box volume  : 463.86               (nm^3)\n    shift       :  6.132  8.263  6.141 (nm)\nnew center      :  6.500  6.500  6.500 (nm)\nnew box vectors : 13.000 13.000 13.000 (nm)\nnew box angles  :  90.00  90.00  90.00 (degrees)\nnew box volume  :2197.00               (nm^3)"
+  },
+  {
+    "objectID": "umbrella_sfbI.html#generate-the-configurations-pulling",
+    "href": "umbrella_sfbI.html#generate-the-configurations-pulling",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Generate the configurations (pulling)",
+    "text": "Generate the configurations (pulling)\nThis take ~36 minutes\ngmx grompp -f inputs/pull.mdp -c npt2.gro -r npt2.gro -t npt2.cpt -n index.ndx -p topol.top -o pull.tpr\ngmx mdrun -v -nb gpu -deffnm pull\nWhen you run the first command above, you will see these pull groups. Check the distances are as expected.\nPull group natoms pbc atom distance at start reference at t=0 1 1 0 2 1 0 0.384 nm 0.384 nm\nvisualise in PyMOL"
+  },
+  {
+    "objectID": "umbrella_sfbI.html#measure-the-distances-between-the-two-cα-atoms-over-time",
+    "href": "umbrella_sfbI.html#measure-the-distances-between-the-two-cα-atoms-over-time",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Measure the distances between the two Cα atoms over time",
+    "text": "Measure the distances between the two Cα atoms over time\nThe command below also generates dist.xvg\ngmx distance -s pull.tpr -f pull.xtc -n index.ndx -select 'com of group 17 plus com of group 18' -oall -oh disthist.xvg -oxyz distxyz.xvg\n\n#graph the distance over time\nxmgrace dist.xvg\nxmgrace -nxy dist.xvg -hdevice PNG -hardcopy -printfile pull_distance.png -noask\n\n#graph the force over time\nxmgrace pull_pullf.xvg\nxmgrace -nxy pull_pullf.xvg -hdevice PNG -hardcopy -printfile pull_force.png -noask"
+  },
+  {
+    "objectID": "homodimers.html#tm-score-zhang-lab-",
+    "href": "homodimers.html#tm-score-zhang-lab-",
+    "title": "Homodimers",
+    "section": "TM-Score (Zhang Lab)-",
+    "text": "TM-Score (Zhang Lab)-\nTM-score is a length-normalised structural similarity score (0–1). It overcomes some of the limitations of the RMSD score. You can calculate a TM score and read about the advantages of this method here https://aideepmed.com/TM-score/"
+  },
+  {
+    "objectID": "umbrella_FnBPA.html",
+    "href": "umbrella_FnBPA.html",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "",
+    "text": "this tutorial is incomplete, edits will be made…\nThe aim of this guide is to use umbrella sampling to calculate the dissociation constant (Kd) for the interaction between 2F13F1 and FnBPA-1.\nThe methods are based on Exercise 3 in the tutorial guide by Justin Lemkul."
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#download-the-input-files-and-charmm36-forcefield",
+    "href": "umbrella_FnBPA.html#download-the-input-files-and-charmm36-forcefield",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Download the input files and Charmm36 forcefield",
+    "text": "Download the input files and Charmm36 forcefield\nCreate a new folder, then run the commands below to download two folders “gmx_tutorials_jpcb” and “toppar_c36_releases”.\ngit clone https://github.com/Lemkul-Lab/gmx_tutorials_jpcb.git\ngit clone https://github.com/Lemkul-Lab/toppar_c36_releases.git\nGo into the gmx_tutorials_jpcb/inputs, and run this command to make a copy of the ‘03_chignolin’ folder and rename it to ‘04_FnBPA1’. This will be the working directory.\ncp -r 03_chignolin/ 04_FnBPA1\nMove the charmm36-jul2024.ff folder to the 04_FnBPA1 folder. This forcefield then appears at number 1 on the list when you run pdb2gmx below."
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#download-starting-coordinates",
+    "href": "umbrella_FnBPA.html#download-starting-coordinates",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Download starting coordinates",
+    "text": "Download starting coordinates\nCoordinates for the interaction between FnBPA1 and 2F1-3F1 are available here 2RKZ. There are five copies in the asymmetric unit. We will use Chain A (fibronectin) and M (FnBPA-1). The fibronectin molecule is complete, with no missing atoms. There are some missing atoms on the bacterial peptide. Open the structure in PyMOL and find residue Lys537 on Chain M. You should see that this resembles alanine. The side-chain of the Lys was not modelled because of disorder. It is necessary to rebuild these missing atoms. Click on the ‘Wizard’ menu to open the ‘Mutagenesis’ function. Pick the residue (Lys537 on Chain M), then on the menu at the bottom-right select ‘No mutation’, to bring up a list of amino acids. Choose ‘Lys’, then the words should change to ‘Mutate to Lys’, click ‘Apply’, then ‘Done’. Visually check that you have mutated this residue to lysine, then save the molecule in PDB format with the filename ‘2RKZ_model1.pdb’. Also, notice that the N-terminus of chain M is acetylated.\nOpen ‘2RKZ_model1.pdb’ in a text editor, delete everything except chains A and M. Save the file as ‘2RKZ_model2.pdb’\nNote the FnBPA1 described in Schwarz-Linek (2003) is residues 560–577 LTG to YDS, this PDB file has a few additional amino acids."
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#create-a-larger-box-of-13-nm.",
+    "href": "umbrella_FnBPA.html#create-a-larger-box-of-13-nm.",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Create a larger box of 13 nm.",
+    "text": "Create a larger box of 13 nm.\nAt the maximum extent, the distance between the two pull groups must be less than half the box size. Aiming for a 6 nm (60 Angstroms) pull, a 13 nm box size gives us a safety cushion.\nThis also centres the molecule with -c flag.\ngmx editconf -f conf.gro -o box.gro -bt cubic -box 13 -c\nThe output should be something like below\nNo velocities found\n    system size :  3.543  4.035  5.341 (nm)\n    diameter    :  6.165               (nm)\n    center      :  0.368 -1.763  0.359 (nm)\n    box vectors :  5.959 10.972  7.147 (nm)\n    box angles  :  90.00  96.94  90.00 (degrees)\n    box volume  : 463.86               (nm^3)\n    shift       :  6.132  8.263  6.141 (nm)\nnew center      :  6.500  6.500  6.500 (nm)\nnew box vectors : 13.000 13.000 13.000 (nm)\nnew box angles  :  90.00  90.00  90.00 (degrees)\nnew box volume  :2197.00               (nm^3)"
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#solvate-in-0.14-m-nacl-and-neutralise",
+    "href": "umbrella_FnBPA.html#solvate-in-0.14-m-nacl-and-neutralise",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Solvate in 0.14 M NaCl and neutralise",
+    "text": "Solvate in 0.14 M NaCl and neutralise\nThe ITC was conducted at physiological salt strength, pH7.4, 25 °C. The files in this tutorial are already at 298 K (25 °C), so no changes are required here. The protonation is consistent with neutral pH. We can specify a NaCl concentration of 0.14 M with ‘-conc 0.14’ as below:\ngmx solvate -cp box.gro -cs spc216.gro -p topol.top -o solv.gro\ngmx grompp -f inputs/ions.mdp -c solv.gro -p topol.top -o ions.tpr\ngmx genion -s ions.tpr -o solv_ions.gro -p topol.top -pname NA -nname CL -neutral -conc 0.14\nChoose 13 to replace the waters with NaCl"
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#minimise-and-equilibrate",
+    "href": "umbrella_FnBPA.html#minimise-and-equilibrate",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Minimise and Equilibrate",
+    "text": "Minimise and Equilibrate\n#minimise\ngmx grompp -f inputs/minim.mdp -c solv_ions.gro -p topol.top -o em.tpr\ngmx mdrun -nb gpu -deffnm em -v\n\n#nvt equilibration (~3 minutes)\n#this is only 100ps of equilibration, longer would be better.\ngmx grompp -f inputs/nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr\ngmx mdrun -nb gpu -deffnm nvt -v\n\n\n#npt equilibration (~17 minutes)\ngmx grompp -f inputs/npt.mdp -c nvt.gro -t nvt.cpt -r nvt.gro -p topol.top -o npt.tpr\ngmx mdrun -nb gpu -deffnm npt -v"
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#check-equilibration-of-temperature-and-pressure",
+    "href": "umbrella_FnBPA.html#check-equilibration-of-temperature-and-pressure",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Check equilibration of temperature and pressure",
+    "text": "Check equilibration of temperature and pressure\ngmx energy -f npt.edr -o npt_pressure.xvg xmgrace npt_pressure.xvg gmx energy -f npt.edr -o npt_temperature.xvg xmgrace npt_temperature.xvg"
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#ns-of-unrestrained-equilibration-46-minutes",
+    "href": "umbrella_FnBPA.html#ns-of-unrestrained-equilibration-46-minutes",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "1 ns of unrestrained equilibration (46 minutes)",
+    "text": "1 ns of unrestrained equilibration (46 minutes)\nNavigate into the inputs folder and open md.mdp. Change the number of steps as below. Then save the file with a new filename ‘md_1ns.mdp’\nnsteps = 500000 ;1 ns\nBelow -f the mdp instruction file -c the input file -t Full precision trajectory input file (binary snapshot of the integrator state with positions, velocities, box, RNG/integrator state, elapsed time/step) -p the topology input file -o output trr file\ngmx grompp -f inputs/md_1ns.mdp -c npt.gro -t npt.cpt -p topol.top -o md_1ns.tpr\ngmx mdrun -v -deffnm md_1ns"
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#check-the-distances-in-the-1-ns-equilibration",
+    "href": "umbrella_FnBPA.html#check-the-distances-in-the-1-ns-equilibration",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Check the distances in the 1 ns equilibration",
+    "text": "Check the distances in the 1 ns equilibration\ngmx distance -s md_1ns.tpr -f md_1ns.xtc -n index.ndx -select ‘com of group 17 plus com of group 18’ -oall -oh disthist.xvg -oxyz distxyz.xvg\nThe starting distance between the two CA atoms is 0.41 nm. The average distance here is 0.429 nm. There are no large deviations."
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#add-restraints-to-maintain-the-structure-of-fn",
+    "href": "umbrella_FnBPA.html#add-restraints-to-maintain-the-structure-of-fn",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Add restraints to maintain the structure of Fn",
+    "text": "Add restraints to maintain the structure of Fn\nIt is necessary to restrain the Fn protein to prevent rotation. In addition, the force generated from the pull may disrupt the structure of Fn.\nRun the command below to see the itp files\nls -ltr *.itp\nWe need to restrain Chain A (fibronectin), defined by “topol_Protein_chain_A.itp”. Scroll to the end of this file and look for these lines:\n; Include Position restraint file\n#ifdef POSRES\n#include \"posre_Protein_chain_A.itp\"\n#endif\nChange the lines to this below:\n; Include Position restraint file\n#ifdef POSRES_Fn\n#include \"posre_Protein_chain_A.itp\"\n#endif\nThen add the -DPOSRES_Fn to the pull.mdp file. It is also necessary to adjust the scaling (as adding restraints with a variable box size may introduce artefacts).\ndefine    =  -DPOSRES_Fn ;include position restraint on fibronectin\nrefcoord-scaling = all ; scale each atom's reference coordinates with the pressure-scaling matrix"
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#generate-the-configurations-pulling",
+    "href": "umbrella_FnBPA.html#generate-the-configurations-pulling",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Generate the configurations (pulling)",
+    "text": "Generate the configurations (pulling)\nThis takes ~36 minutes\ngmx grompp -f inputs/pull.mdp -c md_1ns.gro -r md_1ns.gro -t md_1ns.cpt -n index.ndx -p topol.top -o pull.tpr\ngmx mdrun -v -nb gpu -deffnm pull\nWhen you run the first command above, you will see these pull groups. Check the distances are as expected.\nPull group natoms pbc atom distance at start reference at t=0 1 1 0 2 1 0 0.426 nm 0.426 nm\nVisualise this in PyMOL. Check it all looks sensible."
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#measure-the-distances-between-the-two-cα-atoms-over-time",
+    "href": "umbrella_FnBPA.html#measure-the-distances-between-the-two-cα-atoms-over-time",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Measure the distances between the two Cα atoms over time",
+    "text": "Measure the distances between the two Cα atoms over time\nThe command below also generates dist.xvg (needed later)\ngmx distance -s pull.tpr -f pull.xtc -n index.ndx -select 'com of group 17 plus com of group 18' -oall -oh disthist.xvg -oxyz distxyz.xvg\n\n#graph the distance over time\nxmgrace dist.xvg\nxmgrace -nxy dist.xvg -hdevice PNG -hardcopy -printfile pull_distance.png -noask\n\n#graph the force over time\nxmgrace pull_pullf.xvg\nxmgrace -nxy pull_pullf.xvg -hdevice PNG -hardcopy -printfile pull_force.png -noask"
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#write-the-dat-files-then-run-wham",
+    "href": "umbrella_FnBPA.html#write-the-dat-files-then-run-wham",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "Write the dat files, then run WHAM",
+    "text": "Write the dat files, then run WHAM\nFirst, edit line 7 in the ‘write_wham_files.py’ script to specify the number of files, in this case 28.\nfor i in range(0,28):\nThen run the script to generate the two .dat files.\npython3 write_wham_files.py\nThen run wham\ngmx wham -it tpr-files.dat -if pullf-files.dat -bsprof -bsres -nBootstrap 200\nThe output includes some warnings.\nWarning, poor sampling bin 197 (z=3.36765). Check your histograms!\nWarning, poor sampling bin 198 (z=3.38286). Check your histograms!\nWarning, poor sampling bin 199 (z=3.39806). Check your histograms!\nInitialized rapid wham stuff (contrib tolerance 3.57143e-08)\nEvaluating only 1541 of 5600 expressions."
+  },
+  {
+    "objectID": "umbrella_FnBPA.html#view-the-graphs",
+    "href": "umbrella_FnBPA.html#view-the-graphs",
+    "title": "Umbrella sampling FnBPA1-2F13F1",
+    "section": "View the graphs",
+    "text": "View the graphs\nxmgrace -nxy histo.xvg\nxmgrace  profile.xvg \nxmgrace  bsResult.xvg \nplot the bootstrap graph to estimage the change in Gibbs free energy.\nTo calculate the Gibbs free energy change (ΔG) from a dissociation constant (Kd), use: \\[\n\\Delta G = RT \\ln(K_d)\n\\] Where: R is the gas constant (8.314 J⋅K⁻¹⋅mol⁻¹) T is the temperature (298 K) \\(K_d\\) is the dissociation constant in moles per litre (\\(0.5\\,\\mu\\mathrm{M}\\) is 5×10−7 M)\nNow compare the Gibbs free energy from ITC to the one calculated above."
+  },
+  {
+    "objectID": "umbrella_sfbI.html#build-the-system",
+    "href": "umbrella_sfbI.html#build-the-system",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Build the System",
+    "text": "Build the System\nIn the 04_sfbi folder, run pdb2gmx using the command below. This will add hydrogens and generate coordinate and topology files in GROMACS format.\ngmx pdb2gmx -f fold_sfbi5_2f13f1_model_0.pdb -ignh \n\n# set up a small box for initial 50ns simulation\n# -c option to centre the molecule, remember to use smallbox.gro below\ngmx editconf -f conf.gro -o smallbox.gro -c -bt cubic -d 1.5\n\n# dont bother with this...\n#gmx editconf -f conf.gro -o box.gro -c -box 8.0 8.0 8.0\n\nThe program will look for forcefields in the current working directory that end with ‘.ff’. It should find the charmm36 forcefield from above, and this should be number 1 on the list.\nSelect 1 for charmm, the select 1 for the TIP3P water model.\nRead the text output, paying careful attention to the start/end terminii and the linking of disulfide bonds. The output is “conf.gro”. You can check this in PyMOL.\nThe structure is a model from Alphafold and so it is possible that some aspects of the geometry or structure are not accurate. There could be unusual hydrogen bond lengths, strained geometry, artefacts in covalent bond lengths/angles, or the packing of amino acid side chains might not be optimal. Furthermore, the structure needs to be equilibrated with the GROMACS force field (with our chosen temperature/pressure etc.). Therefore, we will run a short equilibration and unrestrained MD simulation for 50 ns."
+  },
+  {
+    "objectID": "umbrella_sfbI.html#transfer-the-protein-to-a-larger-box",
+    "href": "umbrella_sfbI.html#transfer-the-protein-to-a-larger-box",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Transfer the protein to a larger box",
+    "text": "Transfer the protein to a larger box\nWe are going to pull the two molecules apart so we need a larger box. At the maximum extent, the distance between the two pull groups must be less than half the box size. Aiming for a 6 nm (60 Angstroms) pull, a 13 nm box size should be ok. The command below also centres the molecule with -c flag.\nIf multiple chains and you want them together, use trjconv -pbc mol -center or trjconv -pbc cluster -center.\ncp topol.top topol_50ns.top.bak\n\n# extract the protein component, then read it back in again to move it into a larger box \n\n#gmx make_ndx -f md_50ns.gro -o protein_index.ndx\n#&gt;r Protein\n#&gt;q\n# using the last frame .gro as both -f and -s. Choose to centre on the protein and output the protein only.\ngmx trjconv -f md_50ns.gro -s md_50ns.gro -n protein_index.ndx -o md_50ns_protein_only.gro -center\n\n#  set up a large rectangular box for pulling, check the orientation.\ngmx editconf -f md_50ns_protein_only.gro -o rectbox.gro -center 4 4 2 -rotate 45 45 0  -box 8.0 8.0 13.0\n\n\nThe output should be something like below\nVolume: 639.902 nm^3, corresponds to roughly 287900 electrons\nVelocities found\n    system size :  2.841  5.182  4.644 (nm)\n    center      :  4.385  4.291  4.171 (nm)\n    box vectors :  8.617  8.617  8.617 (nm)\n    box angles  :  90.00  90.00  90.00 (degrees)\n    box volume  : 639.90               (nm^3)\nRotating 45, 45, 0 degrees around the X, Y and Z axis respectively\nnew system size :  2.652  5.707  2.451\n    shift       : -3.332  3.915  0.870 (nm)\nnew center      :  4.000  4.000  2.000 (nm)\nnew box vectors :  8.000  8.000 13.000 (nm)\nnew box angles  :  90.00  90.00  90.00 (degrees)\nnew box volume  : 832.00               (nm^3)\nRemove the solvent and ions from the old topology file topol.top by deleting the last 3 lines\nSOL         21124\nNA               61\nCL               60\nThen resolvate in 0.15 M NaCl and neutralise\ngmx solvate -cp rectbox.gro -cs spc216.gro -o solv2.gro -p topol.top\ngmx grompp -f inputs/ions.mdp -c solv2.gro -p topol.top -o ions2.tpr\ngmx genion -s ions2.tpr -o solv_ions2.gro -p topol.top -pname NA -nname CL -neutral -conc 0.15\n\n#minimise (less than a minute)\ngmx grompp -f inputs/minim.mdp -c solv_ions2.gro -p topol.top -o em2.tpr\ngmx mdrun -nb gpu -deffnm em2 -v\n\n#nvt equilibration (less than a minute)\ngmx grompp -f inputs/nvt.mdp -c em2.gro -r em2.gro -p topol.top -o nvt2.tpr\ngmx mdrun -nb gpu -deffnm nvt2 -v\n\n#npt equilibration (~2 minutes)\ngmx grompp -f inputs/npt.mdp -c nvt2.gro -t nvt2.cpt -r nvt2.gro -p topol.top -o npt2.tpr\ngmx mdrun -nb gpu -deffnm npt2 -v"
+  },
+  {
+    "objectID": "umbrella_sfbI.html#solvate-in-nacl-and-neutralise",
+    "href": "umbrella_sfbI.html#solvate-in-nacl-and-neutralise",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Solvate in NaCl and neutralise",
+    "text": "Solvate in NaCl and neutralise\nITC for SfbI peptides binding to 2f1-3F1 was conducted at low ionic strength buffer (10 mM, see reference 17) pH7.4, 25 °C. We will use 0.15 M NaCl to be consistent with other work (explain). The files in this tutorial are already at 298 K (25 °C), so no changes are required here. The protonation is consistent with neutral pH. We can specify a NaCl concentration of 0.15 M with ‘-conc 0.15’ as below:\ngmx solvate -cp smallbox.gro -cs spc216.gro -p topol.top -o solv.gro\ngmx grompp -f inputs/ions.mdp -c solv.gro -p topol.top -o ions.tpr\ngmx genion -s ions.tpr -o solv_ions.gro -p topol.top -pname NA -nname CL -neutral -conc 0.15\nChoose 13 to replace the waters with NaCl."
+  },
+  {
+    "objectID": "umbrella_sfbI.html#check-equilibration-of-temperature-and-pressure-1",
+    "href": "umbrella_sfbI.html#check-equilibration-of-temperature-and-pressure-1",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Check equilibration of temperature and pressure",
+    "text": "Check equilibration of temperature and pressure\ngmx energy -f md_50ns.edr -o md_50ns_pressure.xvg\nxmgrace md_50ns_pressure.xvg\ngmx energy -f md_50ns.edr -o md_50ns_temperature.xvg\nxmgrace md_50ns_temperature.xvg \nFluctations should be mostly less than 200 bar\nNow we have a protein structure that is equilibrated with the gromacs force field under our chosen conditions, we can proceed. The starting structure should be stable, so that as we run the individual umbrella simulations, there should not be any major conformational changes occurring. The changes in free energy we measure will be dominated by the separation of the bacterial peptide from the fibronectin. The first stage is to increase the box size."
+  },
+  {
+    "objectID": "umbrella_sfbI.html#check-the-peptide-interaction-make-it-whole-if-necessary.",
+    "href": "umbrella_sfbI.html#check-the-peptide-interaction-make-it-whole-if-necessary.",
+    "title": "Umbrella sampling SfbI5 bound to 2F1-3F1",
+    "section": "Check the peptide interaction, make it whole if necessary.",
+    "text": "Check the peptide interaction, make it whole if necessary."
   }
 ]
