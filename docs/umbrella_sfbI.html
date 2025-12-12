@@ -182,23 +182,23 @@ window.Quarto = {
    
   <ul>
   <li><a href="#download-the-input-files-and-charmm36-forcefield" id="toc-download-the-input-files-and-charmm36-forcefield" class="nav-link active" data-scroll-target="#download-the-input-files-and-charmm36-forcefield">Download the input files and Charmm36 forcefield</a></li>
+  <li><a href="#generate-an-alphafold-model-of-sfbi-5-in-complex-with-2f1-3f1" id="toc-generate-an-alphafold-model-of-sfbi-5-in-complex-with-2f1-3f1" class="nav-link" data-scroll-target="#generate-an-alphafold-model-of-sfbi-5-in-complex-with-2f1-3f1">Generate an Alphafold model of SfbI-5 in complex with 2F1-3F1</a></li>
   <li><a href="#build-the-system" id="toc-build-the-system" class="nav-link" data-scroll-target="#build-the-system">Build the System</a></li>
-  <li><a href="#solvate-in-nacl-and-neutralise" id="toc-solvate-in-nacl-and-neutralise" class="nav-link" data-scroll-target="#solvate-in-nacl-and-neutralise">Solvate in NaCl and neutralise</a></li>
+  <li><a href="#solvate-and-neutralise" id="toc-solvate-and-neutralise" class="nav-link" data-scroll-target="#solvate-and-neutralise">Solvate and neutralise</a></li>
   <li><a href="#minimise-and-equilibrate" id="toc-minimise-and-equilibrate" class="nav-link" data-scroll-target="#minimise-and-equilibrate">Minimise and Equilibrate</a></li>
   <li><a href="#check-equilibration-of-temperature-and-pressure" id="toc-check-equilibration-of-temperature-and-pressure" class="nav-link" data-scroll-target="#check-equilibration-of-temperature-and-pressure">Check equilibration of temperature and pressure</a></li>
   <li><a href="#ns-of-unrestrained-equilibration" id="toc-ns-of-unrestrained-equilibration" class="nav-link" data-scroll-target="#ns-of-unrestrained-equilibration">50 ns of unrestrained equilibration</a></li>
-  <li><a href="#check-equilibration-of-temperature-and-pressure-1" id="toc-check-equilibration-of-temperature-and-pressure-1" class="nav-link" data-scroll-target="#check-equilibration-of-temperature-and-pressure-1">Check equilibration of temperature and pressure</a></li>
-  <li><a href="#check-the-peptide-interaction-make-it-whole-if-necessary." id="toc-check-the-peptide-interaction-make-it-whole-if-necessary." class="nav-link" data-scroll-target="#check-the-peptide-interaction-make-it-whole-if-necessary.">Check the peptide interaction, make it whole if necessary.</a></li>
-  <li><a href="#transfer-the-protein-to-a-larger-box" id="toc-transfer-the-protein-to-a-larger-box" class="nav-link" data-scroll-target="#transfer-the-protein-to-a-larger-box">Transfer the protein to a larger box</a></li>
+  <li><a href="#check-equilibration-of-temperature-and-pressure-during-the-50-ns-simulation" id="toc-check-equilibration-of-temperature-and-pressure-during-the-50-ns-simulation" class="nav-link" data-scroll-target="#check-equilibration-of-temperature-and-pressure-during-the-50-ns-simulation">Check equilibration of temperature and pressure during the 50 ns simulation</a></li>
+  <li><a href="#transfer-the-protein-to-a-larger-box-optional" id="toc-transfer-the-protein-to-a-larger-box-optional" class="nav-link" data-scroll-target="#transfer-the-protein-to-a-larger-box-optional">Transfer the protein to a larger box (optional)</a></li>
+  <li><a href="#pulling-the-tandem-beta-zipper-apart" id="toc-pulling-the-tandem-beta-zipper-apart" class="nav-link" data-scroll-target="#pulling-the-tandem-beta-zipper-apart">Pulling the tandem beta zipper apart</a>
+  <ul class="collapse">
   <li><a href="#define-the-pull-groups" id="toc-define-the-pull-groups" class="nav-link" data-scroll-target="#define-the-pull-groups">Define the pull groups</a></li>
   <li><a href="#check-the-distances-in-the-npt-equilibration-this-is-a-sanity-check-to-ensure-we-picked-the-correct-atoms" id="toc-check-the-distances-in-the-npt-equilibration-this-is-a-sanity-check-to-ensure-we-picked-the-correct-atoms" class="nav-link" data-scroll-target="#check-the-distances-in-the-npt-equilibration-this-is-a-sanity-check-to-ensure-we-picked-the-correct-atoms">check the distances in the npt equilibration (this is a sanity check to ensure we picked the correct atoms)</a></li>
   <li><a href="#add-restraints-to-maintain-the-structure-of-fn" id="toc-add-restraints-to-maintain-the-structure-of-fn" class="nav-link" data-scroll-target="#add-restraints-to-maintain-the-structure-of-fn">Add restraints to maintain the structure of Fn</a></li>
   <li><a href="#edit-the-pull.mdp" id="toc-edit-the-pull.mdp" class="nav-link" data-scroll-target="#edit-the-pull.mdp">Edit the pull.mdp</a></li>
-  <li><a href="#pull-distance" id="toc-pull-distance" class="nav-link" data-scroll-target="#pull-distance">pull distance</a>
-  <ul class="collapse">
   <li><a href="#generate-the-configurations-pulling" id="toc-generate-the-configurations-pulling" class="nav-link" data-scroll-target="#generate-the-configurations-pulling">Generate the configurations (pulling)</a></li>
-  <li><a href="#measure-the-distances-between-the-two-cα-atoms-over-time" id="toc-measure-the-distances-between-the-two-cα-atoms-over-time" class="nav-link" data-scroll-target="#measure-the-distances-between-the-two-cα-atoms-over-time">Measure the distances between the two Cα atoms over time</a></li>
   </ul></li>
+  <li><a href="#measure-the-distances-between-the-two-cα-atoms-over-time" id="toc-measure-the-distances-between-the-two-cα-atoms-over-time" class="nav-link" data-scroll-target="#measure-the-distances-between-the-two-cα-atoms-over-time">Measure the distances between the two Cα atoms over time</a></li>
   <li><a href="#get-the-individual-gro-files-for-umbrella-sampling" id="toc-get-the-individual-gro-files-for-umbrella-sampling" class="nav-link" data-scroll-target="#get-the-individual-gro-files-for-umbrella-sampling">Get the individual gro files for umbrella sampling</a></li>
   <li><a href="#visual-check-of-the-starting-positions-in-pymol" id="toc-visual-check-of-the-starting-positions-in-pymol" class="nav-link" data-scroll-target="#visual-check-of-the-starting-positions-in-pymol">visual check of the starting positions in pymol</a></li>
   <li><a href="#run-the-umbrella-sampling" id="toc-run-the-umbrella-sampling" class="nav-link" data-scroll-target="#run-the-umbrella-sampling">Run the umbrella sampling</a></li>
@@ -227,8 +227,8 @@ window.Quarto = {
 </header>
 
 
-<p>this tutorial is incomplete, edits will be made…</p>
-<p>The aim of this guide is to use umbrella sampling to calculate the dissociation constant (Kd) for the interaction between 2F1-3F1 and a fragment of <a href="https://www.ncbi.nlm.nih.gov/protein/WP_415244991.1">SfbI</a> (SfbI-5 residues 574-591). The methods are based on Exercise 3 in the [tutorial guide by Justin Lemkul] (https://pmc.ncbi.nlm.nih.gov/articles/PMC11457149/). We will start by downloading these files.</p>
+<p>This tutorial is incomplete, as we work through each stage I will edit this page to reflect what we actually do.</p>
+<p>The aim of this guide is to use umbrella sampling to calculate the dissociation constant (Kd) for the interaction between 2F1-3F1 and a fragment of <a href="https://www.ncbi.nlm.nih.gov/protein/WP_415244991.1">SfbI</a> (SfbI-5 residues 574-591). The methods are based on Exercise 3 in the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11457149/">tutorial guide by Justin Lemkul</a>. We will start by downloading these files from github.</p>
 <section id="download-the-input-files-and-charmm36-forcefield" class="level2">
 <h2 class="anchored" data-anchor-id="download-the-input-files-and-charmm36-forcefield">Download the input files and Charmm36 forcefield</h2>
 <p>Create a new folder, then run the commands below to download two folders “gmx_tutorials_jpcb” and “toppar_c36_releases”.</p>
@@ -244,6 +244,9 @@ inputs
 run_umbrella_sampling.sh
 write_wham_files.py
 charmm36-jul2024.ff</code></pre>
+</section>
+<section id="generate-an-alphafold-model-of-sfbi-5-in-complex-with-2f1-3f1" class="level2">
+<h2 class="anchored" data-anchor-id="generate-an-alphafold-model-of-sfbi-5-in-complex-with-2f1-3f1">Generate an Alphafold model of SfbI-5 in complex with 2F1-3F1</h2>
 <p>The fragment of <a href="https://www.ncbi.nlm.nih.gov/protein/WP_415244991.1">SfbI</a> that we will target is shown on Figure 3 in <a href="https://www.nature.com/articles/nature01589">Schwarz-Linek et al., 2003</a>. The amino acid sequence is shown below alongside the sequence of 2F1-3F1 from <a href="https://www.uniprot.org/uniprotkb/P02751/entry#family_and_domains">P02751</a>.</p>
 <pre><code>&gt;SfbI5(2F1-3F1 binding region 574-591)
 TGMSGFSETVTIVEDTRP
@@ -254,100 +257,88 @@ ETCFDKYTGNTYRVGDTYERPKDSMIWDCTCIGAGRGRISCTIANRCHEGGQSYKIGDTWRRPHETGGYMLECVCLGNGK
 <section id="build-the-system" class="level2">
 <h2 class="anchored" data-anchor-id="build-the-system">Build the System</h2>
 <p>In the 04_sfbi folder, run pdb2gmx using the command below. This will add hydrogens and generate coordinate and topology files in GROMACS format.</p>
-<pre><code>gmx pdb2gmx -f fold_sfbi5_2f13f1_model_0.pdb -ignh 
-
-# set up a small box for initial 50ns simulation
-# -c option to centre the molecule, remember to use smallbox.gro below
-gmx editconf -f conf.gro -o smallbox.gro -c -bt cubic -d 1.5
-
-# dont bother with this...
-#gmx editconf -f conf.gro -o box.gro -c -box 8.0 8.0 8.0
-</code></pre>
+<pre><code>gmx pdb2gmx -f fold_sfbi5_2f13f1_model_0.pdb -ignh </code></pre>
 <p>The program will look for forcefields in the current working directory that end with ‘.ff’. It should find the charmm36 forcefield from above, and this should be number 1 on the list.</p>
 <p>Select 1 for charmm, the select 1 for the TIP3P water model.</p>
-<p>Read the text output, paying careful attention to the start/end terminii and the linking of disulfide bonds. The output is “conf.gro”. You can check this in PyMOL.</p>
-<p>The structure is a model from Alphafold and so it is possible that some aspects of the geometry or structure are not accurate. There could be unusual hydrogen bond lengths, strained geometry, artefacts in covalent bond lengths/angles, or the packing of amino acid side chains might not be optimal. Furthermore, the structure needs to be equilibrated with the GROMACS force field (with our chosen temperature/pressure etc.). Therefore, we will run a short equilibration and unrestrained MD simulation for 50 ns.</p>
+<p>Read the text output, paying careful attention to the start/end terminii and the linking of disulfide bonds. The output is “conf.gro”. You can check this in PyMOL. We now need to increase the simulation box size. -f conf.gro is the input file -o box.gro is the output file -bt cubic specifies that the box type will be cubic -box 10 specifies that the length of each side will be 10 nm -c centres the molecule in the box</p>
+<pre><code>gmx editconf -f conf.gro -o box.gro -bt cubic -box 10 -c</code></pre>
+<p>The output shows:</p>
+<pre><code>Volume: 40.0493 nm^3, corresponds to roughly 18000 electrons
+No velocities found
+    system size :  5.728  2.729  2.563 (nm)
+    diameter    :  5.749               (nm)
+    center      : -0.004  0.002  0.059 (nm)
+    box vectors :  5.728  2.729  2.562 (nm)
+    box angles  :  90.00  90.00  90.00 (degrees)
+    box volume  :  40.05               (nm^3)
+    shift       :  5.004  4.998  4.941 (nm)
+new center      :  5.000  5.000  5.000 (nm)
+new box vectors : 10.000 10.000 10.000 (nm)
+new box angles  :  90.00  90.00  90.00 (degrees)
+new box volume  :1000.00               (nm^3)</code></pre>
 </section>
-<section id="solvate-in-nacl-and-neutralise" class="level2">
-<h2 class="anchored" data-anchor-id="solvate-in-nacl-and-neutralise">Solvate in NaCl and neutralise</h2>
-<p>ITC for SfbI peptides binding to 2f1-3F1 was conducted at low ionic strength buffer (10 mM, <a href="https://www.nature.com/articles/nature01589">see reference 17</a>) pH7.4, 25 °C. We will use 0.15 M NaCl to be consistent with other work (explain). The files in this tutorial are already at 298 K (25 °C), so no changes are required here. The protonation is consistent with neutral pH. We can specify a NaCl concentration of 0.15 M with ‘-conc 0.15’ as below:</p>
-<pre><code>gmx solvate -cp smallbox.gro -cs spc216.gro -p topol.top -o solv.gro
+<section id="solvate-and-neutralise" class="level2">
+<h2 class="anchored" data-anchor-id="solvate-and-neutralise">Solvate and neutralise</h2>
+<p>The ITC experiements for SfbI peptides binding to 2f1-3F1 were conducted at low ionic strength buffer (10 mM, <a href="https://www.nature.com/articles/nature01589">see reference 17</a>) pH7.4, 25 °C. We will use 0.15 M NaCl to be consistent with other experimental work and other simulations. The files in this tutorial (downloaded from github earlier) are already at 298 K (25 °C), so no changes are required here. The protonation is already consistent with neutral pH. We can specify a NaCl concentration of 0.15 M with ‘-conc 0.15’ as below:</p>
+<pre><code>gmx solvate -cp box.gro -cs spc216.gro -p topol.top -o solv.gro
 gmx grompp -f inputs/ions.mdp -c solv.gro -p topol.top -o ions.tpr
 gmx genion -s ions.tpr -o solv_ions.gro -p topol.top -pname NA -nname CL -neutral -conc 0.15</code></pre>
 <p>Choose 13 to replace the waters with NaCl.</p>
 </section>
 <section id="minimise-and-equilibrate" class="level2">
 <h2 class="anchored" data-anchor-id="minimise-and-equilibrate">Minimise and Equilibrate</h2>
+<p><strong>Energy Minimisation</strong> Energy minimisation removes steric clashes, bad contacts, and high-energy configurations that arise during system preparation. In this step, the system is not simulated over time; instead, atomic positions are iteratively adjusted to find a nearby local minimum on the potential energy surface.</p>
+<p><strong>NVT equilibration (constant Number of particles, Volume, Temperature)</strong> This phase equilibrates the temperature of the system while keeping the volume fixed. The thermostat is active, but the box size does not change. The goal is to stabilise the kinetic energy and remove any artefacts from energy minimisation.</p>
+<p><strong>NPT equilibration (constant Number of particles, Pressure, Temperature)</strong> Once temperature is stable, NPT allows the pressure to equilibrate. A barostat is applied so the box can change size and density. This step brings the system to the correct physical density (1 bar) for production simulations.</p>
+<p>The following will perform energy minimisation, then equilibration.</p>
 <pre><code>#minimise (less than a minute)
 gmx grompp -f inputs/minim.mdp -c solv_ions.gro -p topol.top -o em.tpr
-gmx mdrun -nb gpu -deffnm em -v
+gmx mdrun -deffnm em -v
 
-#nvt equilibration (1 minute)
-#this is only 100ps of equilibration, longer would be better.
+#100 ps of nvt equilibration (1 minute)
 gmx grompp -f inputs/nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
-gmx mdrun -nb gpu -deffnm nvt -v
+gmx mdrun -deffnm nvt -v
 
-
-#npt equilibration (~3 minutes)
+#500 ps of npt equilibration (~3 minutes)
 gmx grompp -f inputs/npt.mdp -c nvt.gro -t nvt.cpt -r nvt.gro -p topol.top -o npt.tpr
-gmx mdrun -nb gpu -deffnm npt -v</code></pre>
+gmx mdrun -deffnm npt -v</code></pre>
 </section>
 <section id="check-equilibration-of-temperature-and-pressure" class="level2">
 <h2 class="anchored" data-anchor-id="check-equilibration-of-temperature-and-pressure">Check equilibration of temperature and pressure</h2>
-<p>gmx energy -f npt.edr -o npt_pressure.xvg xmgrace npt_pressure.xvg #fluctuations should be less than 200 bar. gmx energy -f npt.edr -o npt_temperature.xvg xmgrace npt_temperature.xvg</p>
+<p>The commands below will extract the values for pressure and temperature during the equilibration process and produce a graph of each.</p>
+<pre><code>gmx energy -f npt.edr -o npt_pressure.xvg 
+xmgrace npt_pressure.xvg  #fluctuations should be less than 200 bar. 
+gmx energy -f npt.edr -o npt_temperature.xvg
+xmgrace npt_temperature.xvg </code></pre>
 </section>
 <section id="ns-of-unrestrained-equilibration" class="level2">
 <h2 class="anchored" data-anchor-id="ns-of-unrestrained-equilibration">50 ns of unrestrained equilibration</h2>
-<p>Navigate to the ‘inputs’ folder and open md.mdp. Notice that this will run 25000000 steps of 0.002 ps, totalling 50 ns. Do not change anything, all is good. Start the 50 ns of unrestrained MD using the commands below.</p>
+<p>The structure is a model from Alphafold and so it is possible that some aspects of the geometry or structure are not accurate. There could be unusual hydrogen bond lengths, strained geometry, artefacts in covalent bond lengths/angles, or the packing of amino acid side chains might not be optimal. Furthermore, the structure needs to be equilibrated with the GROMACS force field (with our chosen temperature/pressure etc.). Therefore, we will run unrestrained MD simulation for 50 ns. Navigate to the ‘inputs’ folder and open md.mdp. Notice that this will run 25000000 steps of 0.002 ps, totalling 50 ns. Do not change anything, all is good. Start the 50 ns of unrestrained MD using the commands below.</p>
 <p>The flags below are: -f is the mdp instruction file<br> -c is the input file<br> -t is Full precision trajectory input file (binary snapshot of the integrator state with positions, velocities, box, RNG/integrator state, elapsed time/step)<br> -p is the topology input file<br> -o is output trr file<br></p>
 <pre><code>gmx grompp -f inputs/md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_50ns.tpr
 gmx mdrun -v -deffnm md_50ns</code></pre>
 </section>
-<section id="check-equilibration-of-temperature-and-pressure-1" class="level2">
-<h2 class="anchored" data-anchor-id="check-equilibration-of-temperature-and-pressure-1">Check equilibration of temperature and pressure</h2>
+<section id="check-equilibration-of-temperature-and-pressure-during-the-50-ns-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="check-equilibration-of-temperature-and-pressure-during-the-50-ns-simulation">Check equilibration of temperature and pressure during the 50 ns simulation</h2>
 <pre><code>gmx energy -f md_50ns.edr -o md_50ns_pressure.xvg
 xmgrace md_50ns_pressure.xvg
 gmx energy -f md_50ns.edr -o md_50ns_temperature.xvg
 xmgrace md_50ns_temperature.xvg </code></pre>
 <p>Fluctations should be mostly less than 200 bar</p>
-<p>Now we have a protein structure that is equilibrated with the gromacs force field under our chosen conditions, we can proceed. The starting structure should be stable, so that as we run the individual umbrella simulations, there should not be any major conformational changes occurring. The changes in free energy we measure will be dominated by the separation of the bacterial peptide from the fibronectin. The first stage is to increase the box size.</p>
+<p>Now we have a protein structure that is equilibrated with the gromacs force field under our chosen conditions, we can proceed. The starting structure should be stable, so that as we run the individual umbrella simulations, there should not be any major conformational changes occurring. The changes in free energy we measure will be dominated by the separation of the bacterial peptide from the fibronectin. Check the peptide interaction by visualising the structure in PyMOL.</p>
 </section>
-<section id="check-the-peptide-interaction-make-it-whole-if-necessary." class="level2">
-<h2 class="anchored" data-anchor-id="check-the-peptide-interaction-make-it-whole-if-necessary.">Check the peptide interaction, make it whole if necessary.</h2>
-</section>
-<section id="transfer-the-protein-to-a-larger-box" class="level2">
-<h2 class="anchored" data-anchor-id="transfer-the-protein-to-a-larger-box">Transfer the protein to a larger box</h2>
-<p>We are going to pull the two molecules apart so we need a larger box. At the maximum extent, the distance between the two pull groups must be less than half the box size. Aiming for a 6 nm (60 Angstroms) pull, a 13 nm box size should be ok. The command below also centres the molecule with -c flag.</p>
-<p>If multiple chains and you want them together, use trjconv -pbc mol -center or trjconv -pbc cluster -center.</p>
-<pre><code>cp topol.top topol_50ns.top.bak
+<section id="transfer-the-protein-to-a-larger-box-optional" class="level2">
+<h2 class="anchored" data-anchor-id="transfer-the-protein-to-a-larger-box-optional">Transfer the protein to a larger box (optional)</h2>
+<p>This may not be required, skip this step if you want to continue with the 10 nm box. We are going to pull the two molecules apart. At the maximum extent, the distance between the two pull groups must be less than half the box size, so a larger box might be necessary. We already have a protein structure that is equilibrated with the force field from the 50 ns unrestrained MD simulation from above. The following method will extract that protein structure and resolvate in a larger box.</p>
+<pre><code>cp topol.top topol_50ns.top.bak # create a backup of the topology file.
 
 # extract the protein component, then read it back in again to move it into a larger box 
 
-#gmx make_ndx -f md_50ns.gro -o protein_index.ndx
-#&gt;r Protein
-#&gt;q
-# using the last frame .gro as both -f and -s. Choose to centre on the protein and output the protein only.
-gmx trjconv -f md_50ns.gro -s md_50ns.gro -n protein_index.ndx -o md_50ns_protein_only.gro -center
+# using the last frame .gro as both -f and -s. Choose the options to centre on the protein and output the protein only.
+gmx trjconv -f md_50ns.gro -s md_50ns.gro -o md_50ns_protein_only.gro -center
 
-#  set up a large rectangular box for pulling, check the orientation.
-gmx editconf -f md_50ns_protein_only.gro -o rectbox.gro -center 4 4 2 -rotate 45 45 0  -box 8.0 8.0 13.0
-
-</code></pre>
-<p>The output should be something like below</p>
-<pre><code>Volume: 639.902 nm^3, corresponds to roughly 287900 electrons
-Velocities found
-    system size :  2.841  5.182  4.644 (nm)
-    center      :  4.385  4.291  4.171 (nm)
-    box vectors :  8.617  8.617  8.617 (nm)
-    box angles  :  90.00  90.00  90.00 (degrees)
-    box volume  : 639.90               (nm^3)
-Rotating 45, 45, 0 degrees around the X, Y and Z axis respectively
-new system size :  2.652  5.707  2.451
-    shift       : -3.332  3.915  0.870 (nm)
-new center      :  4.000  4.000  2.000 (nm)
-new box vectors :  8.000  8.000 13.000 (nm)
-new box angles  :  90.00  90.00  90.00 (degrees)
-new box volume  : 832.00               (nm^3)</code></pre>
+# This will set up a larger rectangular box and adjust the orientation.
+gmx editconf -f md_50ns_protein_only.gro -o rectbox.gro -center 4 4 2 -rotate 45 45 0  -box 10.0 10.0 13.0</code></pre>
 <p>Remove the solvent and ions from the old topology file topol.top by deleting the last 3 lines</p>
 <pre><code>SOL         21124
 NA               61
@@ -359,18 +350,20 @@ gmx genion -s ions2.tpr -o solv_ions2.gro -p topol.top -pname NA -nname CL -neut
 
 #minimise (less than a minute)
 gmx grompp -f inputs/minim.mdp -c solv_ions2.gro -p topol.top -o em2.tpr
-gmx mdrun -nb gpu -deffnm em2 -v
+gmx mdrun -deffnm em2 -v
 
 #nvt equilibration (less than a minute)
 gmx grompp -f inputs/nvt.mdp -c em2.gro -r em2.gro -p topol.top -o nvt2.tpr
-gmx mdrun -nb gpu -deffnm nvt2 -v
+gmx mdrun  -deffnm nvt2 -v
 
 #npt equilibration (~2 minutes)
 gmx grompp -f inputs/npt.mdp -c nvt2.gro -t nvt2.cpt -r nvt2.gro -p topol.top -o npt2.tpr
-gmx mdrun -nb gpu -deffnm npt2 -v</code></pre>
+gmx mdrun -deffnm npt2 -v</code></pre>
 </section>
-<section id="define-the-pull-groups" class="level1">
-<h1>Define the pull groups</h1>
+<section id="pulling-the-tandem-beta-zipper-apart" class="level2">
+<h2 class="anchored" data-anchor-id="pulling-the-tandem-beta-zipper-apart">Pulling the tandem beta zipper apart</h2>
+<section id="define-the-pull-groups" class="level3">
+<h3 class="anchored" data-anchor-id="define-the-pull-groups">Define the pull groups</h3>
 <p>We will pull the two molecules apart using a pair of atoms that are close together (0.51 nm), therefore maximizing the pull distance.</p>
 <p>Ala44_CA atom 658 on Fn Thr9_CA atom 1438 on the peptide</p>
 <section id="section" class="level61">
@@ -385,13 +378,13 @@ q</code></pre>
 <p>the pull vector will be 0 0 1</p>
 </section>
 </section>
-<section id="check-the-distances-in-the-npt-equilibration-this-is-a-sanity-check-to-ensure-we-picked-the-correct-atoms" class="level1">
-<h1>check the distances in the npt equilibration (this is a sanity check to ensure we picked the correct atoms)</h1>
+<section id="check-the-distances-in-the-npt-equilibration-this-is-a-sanity-check-to-ensure-we-picked-the-correct-atoms" class="level3">
+<h3 class="anchored" data-anchor-id="check-the-distances-in-the-npt-equilibration-this-is-a-sanity-check-to-ensure-we-picked-the-correct-atoms">check the distances in the npt equilibration (this is a sanity check to ensure we picked the correct atoms)</h3>
 <p>gmx distance -s npt2.tpr -f npt2.trr -n index.ndx -select ‘com of group 17 plus com of group 18’ -oall -oh disthist.xvg -oxyz distxyz.xvg</p>
 <p>The average distance: 0.49983 nm</p>
 </section>
-<section id="add-restraints-to-maintain-the-structure-of-fn" class="level1">
-<h1>Add restraints to maintain the structure of Fn</h1>
+<section id="add-restraints-to-maintain-the-structure-of-fn" class="level3">
+<h3 class="anchored" data-anchor-id="add-restraints-to-maintain-the-structure-of-fn">Add restraints to maintain the structure of Fn</h3>
 <p>It is necessary to restrain the Fn protein to prevent rotation. In addition, the force generated from the pull may disrupt the structure of Fn.</p>
 <p>Run the command below to see the itp files</p>
 <pre><code>ls -ltr *.itp</code></pre>
@@ -406,8 +399,8 @@ q</code></pre>
 #include "posre_Protein_chain_A.itp"
 #endif</code></pre>
 </section>
-<section id="edit-the-pull.mdp" class="level1">
-<h1>Edit the pull.mdp</h1>
+<section id="edit-the-pull.mdp" class="level3">
+<h3 class="anchored" data-anchor-id="edit-the-pull.mdp">Edit the pull.mdp</h3>
 <p>Add the -DPOSRES_Fn to the pull.mdp file. It is also necessary to adjust the scaling (as adding restraints with a variable box size may introduce artefacts).</p>
 <pre><code>gedit ./inputs/pull.mdp
 define    =  -DPOSRES_Fn ;include position restraint on fibronectin
@@ -427,10 +420,7 @@ pull-coord1-groups      = 1 2
 pull-coord1-start       = yes
 pull-coord1-rate        = 0.005
 pull-coord1-k           = 2000</code></pre>
-</section>
-<section id="pull-distance" class="level1">
-<h1>pull distance</h1>
-<p>The pull.mdp has a pull rate of 0.005 nm/ps, which currently over 500ps will extend the vector by 2.5 nm. We need to increase that.</p>
+<p>#pull distance# The pull.mdp has a pull rate of 0.005 nm/ps, which currently over 500ps will extend the vector by 2.5 nm. We need to increase that.</p>
 <p>At the maximum extent, the distance between the two pull groups must be less than half the box size (6.5 nm). If you exceed half the box length, it will result in a fatal error. If this happens reduce the pull distance accordingly. We need a margin of error to prevent interactions with neighboring molecules in adjacent cells.</p>
 <p>We will use a 5 nm pull.</p>
 <p>starting distance + pull distance = maximum extent 0.5 + 5 nm = 5.5 nm</p>
@@ -439,14 +429,16 @@ pull-coord1-k           = 2000</code></pre>
 <p>Each step is 2 fs, so 1,000,000/2 = 500000 steps</p>
 <p>change this line in pull.mdp</p>
 <pre><code>nsteps                  = 500000    ; 1000 ps</code></pre>
-<section id="generate-the-configurations-pulling" class="level2">
-<h2 class="anchored" data-anchor-id="generate-the-configurations-pulling">Generate the configurations (pulling)</h2>
+</section>
+<section id="generate-the-configurations-pulling" class="level3">
+<h3 class="anchored" data-anchor-id="generate-the-configurations-pulling">Generate the configurations (pulling)</h3>
 <p>This take ~36 minutes</p>
 <pre><code>gmx grompp -f inputs/pull.mdp -c npt2.gro -r npt2.gro -t npt2.cpt -n index.ndx -p topol.top -o pull.tpr
 gmx mdrun -v -nb gpu -deffnm pull</code></pre>
 <p>When you run the first command above, you will see these pull groups. Check the distances are as expected.</p>
 <p>Pull group natoms pbc atom distance at start reference at t=0 1 1 0 2 1 0 0.384 nm 0.384 nm</p>
 <p>visualise in PyMOL</p>
+</section>
 </section>
 <section id="measure-the-distances-between-the-two-cα-atoms-over-time" class="level2">
 <h2 class="anchored" data-anchor-id="measure-the-distances-between-the-two-cα-atoms-over-time">Measure the distances between the two Cα atoms over time</h2>
@@ -461,9 +453,8 @@ xmgrace -nxy dist.xvg -hdevice PNG -hardcopy -printfile pull_distance.png -noask
 xmgrace pull_pullf.xvg
 xmgrace -nxy pull_pullf.xvg -hdevice PNG -hardcopy -printfile pull_force.png -noask</code></pre>
 </section>
-</section>
-<section id="get-the-individual-gro-files-for-umbrella-sampling" class="level1">
-<h1>Get the individual gro files for umbrella sampling</h1>
+<section id="get-the-individual-gro-files-for-umbrella-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="get-the-individual-gro-files-for-umbrella-sampling">Get the individual gro files for umbrella sampling</h2>
 <p>First, edit the find_windows.py script to use a starting distance of 0.384 nm, ending distance of 5 nm in 0.2 nm increments. (to capture the distance of 5 nm, you may need to enter 5.2 as the maximum)</p>
 <pre><code>for d in numpy.arange(0.384, 5.2, 0.2):</code></pre>
 <p>Then run the script with this command</p>
@@ -471,26 +462,34 @@ xmgrace -nxy pull_pullf.xvg -hdevice PNG -hardcopy -printfile pull_force.png -no
 <p>This python script reads the dist.xvg file from the previous step and extracts the .gro file that is closest to each target value. For example:</p>
 <pre><code>target value: 3.2 best value: 3.181 at time: 468.0</code></pre>
 </section>
-<section id="visual-check-of-the-starting-positions-in-pymol" class="level1">
-<h1>visual check of the starting positions in pymol</h1>
+<section id="visual-check-of-the-starting-positions-in-pymol" class="level2">
+<h2 class="anchored" data-anchor-id="visual-check-of-the-starting-positions-in-pymol">visual check of the starting positions in pymol</h2>
 <p>Open these gro files in PyMOL and check that they are as expected. If you are missing the last one at the greatest pull distance then increase the value above and repeat it. Check the extent of the separation. Check at the maximum pull distance there are no interactions with neighboring molecules.</p>
 </section>
-<section id="run-the-umbrella-sampling" class="level1">
-<h1>Run the umbrella sampling</h1>
+<section id="run-the-umbrella-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="run-the-umbrella-sampling">Run the umbrella sampling</h2>
 <p>Edit the template to define the pull groups.</p>
 <pre><code>gedit ./inputs/us.tmpl</code></pre>
 <p>Edit the lines below, then save this as us.mdp</p>
-<pre><code>nsteps                 =  5000000 ; 10 ns 
+<p>The options below are for the rectangular cell where we pulled along the Z-axis.</p>
+<pre><code>; Pull options
+pull                    = yes
+pull-ngroups            = 2         ; two groups form one reaction coordinate
+pull-ncoords            = 1         ; one reaction coordinate/bias being applied
 pull-group1-name        = Ala44_CA   ; Fn
 pull-group2-name        = Thr9_CA    ; bacterial peptide
+pull-coord1-type        = umbrella  ; harmonic potential
+pull-coord1-geometry    = distance
 pull-coord1-dim         = N N Y     ; 
-pull-coord1-start       = yes ; automatically set the starting distance for the bias potential
-;pull-coord1-init        = XX ; comment out this line, or delete it.</code></pre>
+pull-coord1-groups      = 1 2
+pull-coord1-start       = yes
+;pull-coord1-init        = XX 
+pull-coord1-rate        = 0.0
+pull-coord1-k           = 1000</code></pre>
 <p>Edit the ‘run_umbrella_sampling.sh’ script to stop it generating a new .mdp file for each distance. We will use the ‘us.mdp’ for all distances. (comment out lines 17-19, then specify us.mdp on line 22).</p>
 <p>Edit the line at the top to define the number of runs for (( i=0; i&lt;=24; i++ ))</p>
 <p>The run_umbrella_sampling.sh script will now run generate a new folder called ‘umbrella’, then run npt/nvt equilibration with position restraints on the protein, then a 10 ns unrestrained md simulation in each window.</p>
 <pre><code>bash run_umbrella_sampling.sh</code></pre>
-<p>This process took 10.5 days (started Dec 4th 1:30pm, ended ). .</p>
 <p>#Write the dat files, then run WHAM First, edit line 7 to specify the number of files, in this case 25.</p>
 <pre><code>for i in range(0,25):</code></pre>
 <p>Then run the script to generate the two .dat files.</p>
@@ -511,8 +510,8 @@ Evaluating only 1541 of 5600 expressions.
 \]</span> Where: R is the gas constant (8.314 J⋅K⁻¹⋅mol⁻¹) T is the temperature (298 K) <code>$K_d$</code> is the dissociation constant in moles per litre (<span class="math inline">\(3.6\,\mu\mathrm{M}\)</span> is 5×10−7 M)</p>
 <p>Lets plot that bootstrap graph.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#expected from ITC</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>(<span class="fl">8.314</span><span class="sc">*</span><span class="dv">298</span><span class="sc">*</span><span class="fu">log</span>(<span class="fl">3.6</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^-</span><span class="dv">6</span>) )<span class="sc">/</span><span class="dv">1000</span> <span class="co"># in Kj</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#expected from ITC</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>(<span class="fl">8.314</span><span class="sc">*</span><span class="dv">298</span><span class="sc">*</span><span class="fu">log</span>(<span class="fl">3.6</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^-</span><span class="dv">6</span>) )<span class="sc">/</span><span class="dv">1000</span> <span class="co"># in Kj</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -31.05532</code></pre>
 </div>
